@@ -52,3 +52,77 @@ Output:
 - Updated layout.tsx
 - Updated Header.tsx
 - New or updated Hero.tsx
+# shadcn/ui Usage Constraints
+
+This project uses shadcn/ui as a low-level accessibility and interaction primitive source,
+NOT as a design system or visual component library.
+
+All usage must comply with:
+- docs/design-constraints.md
+- docs/tailwind-guidelines.md
+- docs/component-usage.md
+
+Design and structural decisions are frozen.
+
+---
+
+## Allowed Usage
+
+shadcn/ui components may be used ONLY for elements that require:
+- Interaction behavior
+- State management
+- Accessibility handling (keyboard, focus, ARIA)
+
+Examples:
+- Button
+- Basic form inputs (input, textarea)
+- Dialog / Modal (structure only)
+- Dropdown / Popover (structure only)
+
+---
+
+## Forbidden Usage
+
+Do NOT use shadcn/ui components for:
+- Layout or page structure
+- Visual grouping or decoration
+- Section containers
+- Hero or content presentation
+- Typography decisions
+
+Explicitly forbidden components include (non-exhaustive):
+- Card
+- Tabs
+- Accordion
+- Sheet
+- Navigation menu
+- Typography helpers
+
+---
+
+## Styling Rules
+
+- All default shadcn color tokens (muted, secondary, destructive, etc.) are forbidden.
+- Only project semantic tokens may be used:
+  - bg-canvas
+  - text-primary
+  - text-accent
+
+- Border radius must be minimal and consistent.
+- Shadows are not allowed.
+- Hover and focus states must be subtle and non-animated.
+
+---
+
+## Modification Policy
+
+- shadcn/ui components may be modified to REMOVE visual styling.
+- Do NOT extend shadcn components with new visual variants.
+- Prefer deletion of styles over addition.
+
+---
+
+## Guiding Principle
+
+shadcn/ui exists to solve interaction and accessibility problems.
+All visual design decisions belong exclusively to this project.
