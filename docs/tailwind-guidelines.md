@@ -1,85 +1,163 @@
 # TAILWIND GUIDELINES
 **Personal Portfolio — Tailwind Usage Strategy (Strict)**
+# TAILWIND GUIDELINES
+**Personal Portfolio — Tailwind Usage Strategy (System + Expression)**
 
 ---
 
 ## PURPOSE
-This document translates `docs/design-constraints.md` into enforceable Tailwind usage rules.
-All components must comply. No exceptions.
+
+This document translates `docs/design-constraints.md` and `docs/design-intent.md`
+into enforceable Tailwind usage rules.
+
+Tailwind is used to:
+- Enforce visual consistency
+- Encode design decisions into utilities
+- Enable expressive presentation without style drift
 
 ---
+
+
+## DESIGN ZONES
+
+The system recognizes two behavioral zones:
+
+### Expressive Zones
+- Header
+- Hero
+- Contact
+
+These zones may use motion, emphasis, and controlled visual contrast.
+
+### Structured Zones
+- Skills
+- Projects
+- Experience
+- Other informational sections
+
+These zones must remain restrained and content-first.
+
+---
+
 
 ## COLOR TOKENS
-**Use semantic tokens only. No arbitrary values.**
+**Use semantic tokens only. No raw values.**
 
-- Allowed tokens: `bg-canvas`, `text-primary`, `text-accent`
-- `bg-canvas` is only allowed on the root page container or full-width section wrappers.
--  Nested components must remain transparent.
-- Light theme:
-  - `bg-canvas`: off-white
-  - `text-primary`: near-black
-  - `text-accent`: single accent hue, adjusted for light theme legibility
-- Dark theme:
-  - `bg-canvas`: near-black
-  - `text-primary`: off-white
-  - `text-accent`: same hue as light theme, adjusted for dark theme legibility
-- `text-accent` usage:
-  - Allowed: interactive elements only (links, buttons, nav active, CTAs)
-  - Forbidden: headings, body text, meta text, backgrounds, borders, decorative elements
-- Non-interactive text always uses `text-primary` regardless of hierarchy
-
----
-
-## TYPOGRAPHY MAPPING
-**Exactly five roles. No other sizes or weights.**
-
-- Hero title: `text-5xl` `md:text-6xl` `font-semibold` `leading-tight`
-- Section title: `text-2xl` `md:text-3xl` `font-semibold` `leading-snug`
-- Navigation text: `text-base` `font-medium` `leading-normal`
-- Body text: `text-base` `md:text-lg` `font-normal` `leading-relaxed`
-- Meta text: `text-sm` `font-normal` `leading-relaxed`
+Allowed tokens:
+- `bg-canvas`
+- `bg-surface`
+- `text-primary`
+- `text-accent`
+- `border-subtle`
 
 Rules:
-- Hierarchy by size and weight only (no color differentiation)
-- No intermediate sizes or alternate weights
-- Same sizes across both themes
-- Navigation text remains constant across breakpoints for consistent muscle memory
+- `bg-canvas`: root container and full-width sections only
+- `bg-surface`: cards, grouped areas, expressive zones only
+- Nested components should prefer transparent backgrounds
+- Light/Dark themes adjust luminance only, not hue identity
+
+`text-accent` usage:
+- Allowed: interactive elements (links, buttons, nav active, CTAs)
+- Forbidden: headings, body text, meta text, decorative usage
+
+Non-interactive text ALWAYS uses `text-primary`.
 
 ---
 
+
+## TYPOGRAPHY SYSTEM
+**Exactly five roles. No deviations.**
+
+- Hero title: `text-5xl md:text-6xl font-semibold leading-tight`
+- Section title: `text-2xl md:text-3xl font-semibold leading-snug`
+- Navigation text: `text-base font-medium leading-normal`
+- Body text: `text-base md:text-lg font-normal leading-relaxed`
+- Meta text: `text-sm font-normal leading-relaxed`
+
+Rules:
+- Hierarchy via size and weight only
+- No color-based hierarchy
+- No intermediate sizes or alternate weights
+- Identical scale across themes
+
+---
+
+
 ## SPACING SCALE
-**Only the following steps are allowed:**
+**Only the following spacing steps are allowed:**
 
 `0`, `2`, `4`, `6`, `8`, `12`, `16`, `20`, `24`, `32`
 
-Usage rules:
-- Internal spacing within sections: `space-y-4`, `space-y-6`, or `space-y-8`
-- Section-to-section spacing: `space-y-16`, `space-y-20`, or `space-y-24`
-- No arbitrary spacing values
+Usage:
+- Internal spacing: `space-y-4`, `space-y-6`, `space-y-8`
+- Section spacing: `space-y-16`, `space-y-20`, `space-y-24`
+
+Consistent rhythm is mandatory.
 
 ---
 
-## LAYOUT RULES
-**Single-column document layout, consistent rhythm.**
 
-- Max content width: `max-w-4xl` only
+## LAYOUT RULES
+
+- Single-column layout
+- Max content width: `max-w-4xl`
 - Horizontal padding:
   - Mobile: `px-6`
   - Tablet: `md:px-8`
   - Desktop: `lg:px-12`
-- Vertical rhythm per section: `py-16` or `py-20`
-- No element may touch viewport edges
-- Section spacing must be significantly larger than internal spacing
+- Vertical padding per section: `py-16` or `py-20`
+- No content touches viewport edges
 
 ---
 
-## PROHIBITIONS (TAILWIND LEVEL)
-**Do not use Tailwind utilities that violate the design constraints.**
+## MOTION & TRANSITIONS
 
-- No gradients (`bg-gradient-*`)
-- No shadows (`shadow-*`)
-- No animations or transitions except subtle hover states on interactive elements
-- Hover states may only adjust text color or underline.
-- No movement, scaling, or background changes on hover.
-- No decorative elements or icons used purely for styling
+Motion is allowed **only when it adds clarity or impact**.
+
+Allowed (Expressive Zones only):
+- `transition-opacity`
+- `transition-transform`
+- `duration-300`, `duration-500`
+- `ease-out`
+- Entrance animations (opacity + translateY)
+- Motion triggered once on first viewport entry
+
+Allowed (Global):
+- Hover and focus feedback on interactive elements
+
+Forbidden:
+- Infinite or looping animations
+- Attention-grabbing motion in structured zones
+- Motion used purely for decoration
+
+---
+
+## SHADOWS, BORDERS, AND FRAMING
+
+- Shadows: allowed **sparingly** in expressive zones only
+- Borders: allowed using `border-subtle` for grouping and clarity
+- Heavy framing or skeuomorphic effects are forbidden
+
+---
+
+## ICONS & DECORATION
+
+Icons are allowed ONLY when:
+- They convey semantic meaning
+- They improve scannability or comprehension
+
+Decorative-only icons are not allowed.
+
+---
+
+## GUIDING PRINCIPLE
+
+Tailwind utilities encode the design system.
+
+If a utility breaks rhythm, hierarchy, or restraint,
+it does not belong in this project.
+
+Expression is encouraged —
+chaos is not.
+---
 

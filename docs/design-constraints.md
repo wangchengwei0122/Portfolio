@@ -1,104 +1,131 @@
 # DESIGN CONSTRAINTS
-**Personal Portfolio — Dual Theme Support**
+**Personal Portfolio — Experience‑Driven, Dual Theme Support**
+
+---
+
+## CORE PHILOSOPHY
+
+**This portfolio is a presentation, not a document.**
+
+Its primary job is to create a strong first impression within the first few seconds,
+while remaining clear, readable, and technically credible.
+
+Visual expression is not decoration.
+It is a communication tool used deliberately to signal taste, confidence, and seniority.
 
 ---
 
 ## THEME PHILOSOPHY
 
-**Both light and dark themes are first-class citizens.**
+**Light and dark themes are both first‑class.**
 
-Theme switching changes contrast relationships only. Structure, hierarchy, spacing, and tone remain identical. A user switching themes should notice only the shift in luminance—never a change in information density or visual weight.
+Theme switching adjusts luminance and contrast only.
+Structure, hierarchy, layout rhythm, and interaction patterns must remain identical.
+
+A user switching themes should feel continuity, not novelty.
 
 ---
 
-## SHARED CONSTRAINTS
-**These apply to BOTH themes. No exceptions.**
+## EXPERIENCE ZONES (CRITICAL)
 
-### Accent Color Strategy
+The portfolio is divided into two behavioral zones:
 
-**One accent color. Used sparingly.**
+### Expressive Zones
+These sections are allowed — and expected — to create emotional impact.
 
-- **Where used:** Interactive elements (links, buttons), active navigation indicators, contact CTAs
-- **Where NOT used:** Headings, body text, backgrounds, decorative elements, borders, or any non-interactive UI
-- **Cross-theme behavior:** Same hue. Only lightness/saturation may adjust for legibility.
+- Header
+- Hero
+- Contact
 
-### Typography Hierarchy
+Expressive zones MAY:
+- Use motion and animation (first‑entry only)
+- Establish visual emphasis
+- Use background contrast or subtle framing
+- Guide attention and action (CTAs)
+
+### Structured Zones
+These sections prioritize clarity and scannability.
+
+- Skills
+- Projects
+- Experience
+- Any informational sections
+
+Structured zones MUST:
+- Remain restrained and content‑first
+- Avoid visual noise
+- Favor predictability over expression
+
+---
+
+## ACCENT COLOR STRATEGY
+
+**One accent color. Used intentionally.**
+
+- **Used for:** Links, buttons, navigation state, key CTAs
+- **Not used for:** Body text, headings, backgrounds, decoration
+- **Cross‑theme behavior:** Same hue, adjusted luminance only
+
+Accent color exists to signal interaction and direction — not branding.
+
+---
+
+## TYPOGRAPHY SYSTEM
 
 **Five roles only:**
 
-1. **Hero title** — Name/intro. Largest. Sets initial impression.
-2. **Section title** — "About", "Experience", "Projects". Clear visual break.
-3. **Navigation text** — Primary navigation links. Scannable, persistent.
-4. **Body text** — All paragraph content. Optimized for reading.
-5. **Meta text** — Dates, tech tags, labels. Smallest. Clearly subordinate.
+1. Hero title — identity and first impression
+2. Section title — structural separation
+3. Navigation text — persistent orientation
+4. Body text — reading comfort
+5. Meta text — supporting context
 
-**Constraints:**
-- Hierarchy achieved through size and weight ONLY (no color differentiation)
-- Line height optimized for readability over compactness
-- No font sizes between these five roles
-- Same font sizes across both themes
+Rules:
+- Hierarchy via size and weight only
+- No color‑based hierarchy
+- No intermediate sizes
+- Identical scale across themes
 
-### Spacing & Layout Rhythm
+---
 
-**Section spacing:** Generous. Each section is a distinct chapter. Large vertical gaps prevent cognitive bleed.
+## SPACING & LAYOUT RHYTHM
 
-**Content density:** Low-to-medium. White space (or dark space) conveys confidence.
-
-**Rules:**
-- Consistent vertical spacing within sections
-- Section spacing significantly larger than internal content spacing
+- Sections feel like chapters
+- White / dark space conveys confidence
+- Internal spacing is consistent and predictable
+- Section spacing is significantly larger than internal spacing
 - No content touches viewport edges
-- Identical spacing values in both themes
 
-### Prohibited Elements
-
-**The UI must explicitly avoid:**
-- Decorative flourishes (icons, illustrations, graphics)
-- Animations or transitions (except subtle hover states on interactive elements)
-- Gradients or drop shadows
-- Playful or casual visual language
-- Theme-specific layout changes
+Rhythm is part of the design language.
 
 ---
 
-## LIGHT THEME CONSTRAINTS
+## MOTION & VISUAL EXPRESSION
 
-**Primary context:** Recruiter scanning, bright environments, professional review
+Motion is allowed — but must be purposeful.
 
-**Color relationships:**
-- Background: Off-white (not pure white). Reduces eye strain.
-- Text: Near-black (not pure black). Softens contrast.
-- Contrast ratio: Sufficient for accessibility, never harsh.
+Allowed:
+- Opacity + translateY entrance animations
+- Subtle scaling (≤ 1.02)
+- Motion triggered once on first viewport entry
+- Hover and focus feedback
 
-**Tone:** Clean, airy, professional. Optimized for quick scanning and legibility in daylight conditions.
-
----
-
-## DARK THEME CONSTRAINTS
-
-**Primary context:** Focused reading, extended sessions, engineering tool environments
-
-**Color relationships:**
-- Background: Near-black (not pure black). Prevents OLED burn-in and reduces harshness.
-- Text: Off-white (not pure white). Maintains comfortable contrast.
-- Contrast ratio: Controlled. Never harsh or jarring.
-
-**Tone:** Focused, calm, technical. Optimized for sustained reading without eye fatigue.
+Forbidden:
+- Infinite or looping animations
+- Decorative motion without meaning
+- Visual effects that distract from content
 
 ---
 
 ## OVERALL TONE
-**Both themes should feel:**
-- Spacious
+
+The portfolio should feel:
+
 - Confident
-- Readable
-- Minimal
-- Professional
+- Modern
+- Intentional
+- Calm, but not sterile
+- Designed, not assembled
 
 ---
 
-## GUIDING PRINCIPLE
-
-**This portfolio is a document, not an experience.**
-
-Content is the design. Every UI decision should fade into the background. Theme selection is a user preference for reading comfort, not a brand statement. The work must speak equally loud in both modes.

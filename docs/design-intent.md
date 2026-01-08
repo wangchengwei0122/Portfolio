@@ -1,114 +1,130 @@
 # DESIGN INTENT
 
-This document defines decision preferences to ensure long-term system consistency.
+This document defines how decisions should be made
+when translating constraints into real UI.
 
-It does not describe visual style.
-It does not introduce new rules.
-It exists solely to prevent divergence when multiple valid implementations are possible.
-
----
-
-## Primary Goal
-
-Ensure that all UI components and sections appear to belong to a single, closed system.
-
-No component, section, or interaction should appear as a special case.
-
-Consistency is always more important than expressiveness.
+It exists to preserve system coherence
+while allowing expressive, high‑quality presentation.
 
 ---
 
-## Global Decision Principles
+## PRIMARY GOAL
 
-When multiple compliant implementations are possible:
+Create a portfolio that feels **designed**.
 
-- Prefer the option that reuses existing patterns
-- Prefer the option that introduces the fewest new decisions
-- Prefer the option that would not require explanation to another engineer
-- Prefer predictability over novelty
+Not minimal by default.
+Not expressive everywhere.
+But deliberate, cohesive, and memorable.
 
-Do not optimize for visual interest.
-Do not optimize for uniqueness.
-Do not optimize for personality.
-
----
-
-## Structural Intent
-
-The UI is treated as a structured document.
-
-- Layout establishes meaning
-- Spacing establishes hierarchy
-- Order establishes emphasis
-
-No other visual mechanism should be used to communicate structure.
+The UI should communicate:
+- Seniority
+- Taste
+- Engineering rigor
+- Product intuition
 
 ---
 
-## Header Decision Intent
+## DECISION PRINCIPLES
+
+When multiple valid implementations exist:
+
+- Prefer the option that improves first impression
+- Prefer reuse of existing visual patterns
+- Prefer clarity over cleverness
+- Prefer systems that scale visually, not just structurally
+
+Consistency matters —
+but emotional flatness is considered a failure.
+
+---
+
+## EXPRESSION VS CONSISTENCY
+
+Consistency does NOT mean uniformity.
+
+- Expressive zones are allowed to stand out
+- Structured zones should feel predictable
+- Visual emphasis must be intentional, not accidental
+
+If everything looks the same, hierarchy has failed.
+
+---
+
+## HEADER INTENT
 
 Purpose:
-Provide persistent structural navigation.
+- Orientation
+- Identity
+- Subtle presence
 
-Decision constraints:
-- Header must not introduce visual hierarchy beyond its position
-- Header must not compete with page content
-- Header must behave consistently across all scroll states
+Header SHOULD:
+- Feel anchored and intentional
+- Maintain presence during scroll
+- Support navigation without disappearing visually
 
-If a change makes the header feel noticeable,
-the change is likely incorrect.
+Header SHOULD NOT:
+- Compete aggressively with hero content
+- Feel invisible or purely mechanical
 
 ---
 
-## Hero Decision Intent
+## HERO INTENT
 
 Purpose:
-Provide initial context only.
+- Establish identity
+- Set tone
+- Create the first emotional beat
 
-Decision constraints:
-- Hero must not rely on visual emphasis to convey importance
-- Hero must not introduce a new layout model
-- Hero must not require unique styling rules
+Hero SHOULD:
+- Feel visually intentional
+- Use space, typography, and motion
+- Immediately communicate who you are and what you do
 
-If the hero cannot be described using existing layout and typography rules,
-the structure is incorrect.
+Hero SHOULD NOT:
+- Feel like a generic section
+- Be constrained by document‑style rules
 
 ---
 
-## Section Decision Intent
+## SECTION INTENT
 
 Purpose:
-Group content predictably.
+- Deliver information clearly
 
-Decision constraints:
-- Sections must follow the same structural pattern
-- Sections must not introduce visual framing or decoration
-- Sections must be distinguishable only through spacing and order
+Sections SHOULD:
+- Reuse a consistent layout pattern
+- Prioritize readability
+- Avoid unnecessary decoration
 
-If a section appears visually distinct without reading its content,
-the implementation is likely incorrect.
-
----
-
-## Component Decision Intent
-
-All components are treated as instances of a single system.
-
-Decision constraints:
-- No component may introduce a new visual language
-- No component may require custom styling to appear correct
-- No component may exist outside established layout patterns
-
-If a component feels incomplete without additional styling,
-it should be restructured, not styled.
+Sections SHOULD NOT:
+- Compete visually with Hero or Contact
+- Introduce new interaction models
 
 ---
 
-## Decision Stop Rule (Critical)
+## COMPONENT INTENT
 
-If an implementation requires a new visual, layout, or interaction decision
-that is not explicitly covered by existing documents:
+Components are building blocks within a visual system.
 
-Stop.
+Components MAY:
+- Contain internal layout and presentation logic
+- Use motion if consistent with expressive zones
 
-Request clarification instead of improvising.
+Components MUST:
+- Feel native to the system
+- Avoid isolated styling hacks
+
+---
+
+## DECISION ESCALATION RULE
+
+If a new decision is required:
+
+- First, look for patterns in Hero or Header
+- If unclear, choose the option that improves perceived quality
+- Document the pattern for reuse
+
+Improvisation is allowed.
+Chaos is not.
+
+---
