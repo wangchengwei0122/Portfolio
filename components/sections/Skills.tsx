@@ -1,5 +1,8 @@
+"use client";
+import { motion } from "motion/react";
 import Section from "../layout/Section";
 import { Code2, Server, Wrench, ShieldCheck, LucideIcon } from "lucide-react";
+import { listStagger, sectionItem } from "@/lib/motion";
 
 interface Skill {
   name: string;
@@ -32,9 +35,9 @@ function SkillItem({ skill }: { skill: Skill }) {
         )}
       </div>
       {skill.level && (
-        <div className="h-1 bg-muted rounded-full overflow-hidden">
+        <div className="h-1 rounded-full border border-subtle overflow-hidden">
           <div
-            className={`h-full bg-accent rounded-full ${levelWidth[skill.level]}`}
+            className={`h-full bg-surface ${levelWidth[skill.level]}`}
           />
         </div>
       )}
@@ -45,9 +48,11 @@ function SkillItem({ skill }: { skill: Skill }) {
 function SkillGroup({ title, icon: Icon, skills }: SkillGroupProps) {
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-3">
-        <Icon className="size-5 text-accent" />
-        <h3 className="text-xl font-semibold text-primary">{title}</h3>
+      <div className="flex items-center gap-4">
+        <Icon className="size-5 text-primary" />
+        <h3 className="text-base font-medium leading-normal text-primary">
+          {title}
+        </h3>
       </div>
       <div className="space-y-4">
         {skills.map((skill, index) => (
@@ -104,14 +109,19 @@ export default function Skills() {
 
   return (
     <Section id="skills" title="Skills">
-      <p className="text-base md:text-lg font-normal leading-relaxed text-primary mb-12">
+      <p className="text-base md:text-lg font-normal leading-relaxed text-primary">
         Technical foundation built through years of solving complex problems.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <motion.div
+        variants={listStagger}
+        className="grid grid-cols-1 md:grid-cols-2 gap-12"
+      >
         {skillGroups.map((group, index) => (
-          <SkillGroup key={index} {...group} />
+          <motion.div key={index} variants={sectionItem}>
+            <SkillGroup {...group} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

@@ -1,40 +1,113 @@
 # AGENT RULES
 
-## AUTHORITY
-All AI work in this repository must comply with the following documents. They are the source of truth and must be read before making changes:
-- docs/design-constraints.md
-- docs/tailwind-guidelines.md
-- docs/shadcn-usage.md
-- docs/component-usage.md
-- docs/design-intent.md
+This repository represents a **presentation-first personal portfolio**.
+The goal is to create a cohesive, high-quality visual system that makes a strong first impression
+while maintaining engineering rigor and consistency.
 
-Design and structural decisions are frozen. Do not reinterpret, extend, or override the documents above.
+AI is expected to behave not only as an implementer,
+but as a **design-aware system contributor** within defined boundaries.
+
+---
+
+## AUTHORITY
+
+All AI work in this repository must comply with the following documents,
+listed in order of precedence:
+
+1. docs/design-intent.md
+2. docs/design-constraints.md
+3. docs/tailwind-guidelines.md
+4. docs/component-usage.md
+5. docs/shadcn-usage.md
+
+When conflicts arise, **design intent takes priority over strict constraint interpretation**.
+
+---
+
+## DESIGN ZONES
+
+The system recognizes two behavioral zones:
+
+### Expressive Zones
+- Header
+- Hero
+- Contact
+
+In expressive zones, AI is explicitly allowed — and encouraged — to:
+- Improve visual quality
+- Apply motion, hierarchy, and emphasis
+- Make layout and presentation decisions
+- Enhance first impression and emotional impact
+
+### Structured Zones
+- Skills
+- Projects
+- Experience
+- Other informational sections
+
+In structured zones, AI must:
+- Preserve clarity and predictability
+- Avoid unnecessary visual expression
+- Reuse established layout patterns
+
+---
 
 ## REQUIRED BEHAVIOR
-- Follow the document-first, engineering-first UI philosophy.
-- Preserve existing layout structure, hierarchy, and spacing.
-- Use semantic HTML by default.
-- Keep changes minimal, focused, and within the stated task scope.
-- Use components only when explicitly permitted by docs/component-usage.md.
+
+AI MUST:
+- Treat the portfolio as a designed system, not a document
+- Actively improve perceived quality when working in expressive zones
+- Reuse visual and interaction patterns established elsewhere
+- Respect spacing, typography, and token systems
+- Prefer consistency over novelty
+
+AI SHOULD:
+- Suggest improvements when quality can be raised
+- Encapsulate repeated patterns into components
+- Apply motion and transitions deliberately
+- Maintain accessibility and semantic HTML
+
+---
 
 ## FORBIDDEN ACTIONS
-- Do not add or modify visual design beyond what the referenced documents allow.
-- Do not introduce new layout patterns, sections, or interactions.
-- Do not create components for presentation, layout grouping, typography, or spacing.
-- Do not use Tailwind utilities, tokens, or scales outside docs/tailwind-guidelines.md.
-- Do not add decorative elements, animations, gradients, shadows, or visual effects.
+
+AI MUST NOT:
+- Introduce visual noise or gratuitous decoration
+- Add infinite or looping animations
+- Break established rhythm or hierarchy
+- Introduce new design tokens without justification
+- Apply trend-driven or novelty-focused styling
+
+---
+
+## DECISION GUIDANCE
+
+When faced with a design or interaction decision:
+
+1. Look for an existing pattern in Hero or Header
+2. Prefer the option that improves perceived quality
+3. Ensure the decision scales across the system
+4. Document the pattern if it becomes reusable
+
+AI is allowed to make decisions.
+AI is **not** allowed to create chaos.
+
+---
 
 ## ENFORCEMENT
-If a requested change conflicts with the authority documents, the change must be refused or reduced to the closest compliant alternative.
 
-## DESIGN AUTHORITY
+If a requested change clearly conflicts with design intent,
+AI must explain the conflict and propose a compliant alternative.
 
-AI is not allowed to make new design decisions.
+Blind refusal is discouraged.
+Reasoned adjustment is preferred.
 
-AI may only:
-- Apply existing design constraints
-- Implement previously defined intent
-- Reuse established patterns
+---
 
-If a task requires a new visual or interaction decision,
-AI must stop and ask for clarification.
+## SUMMARY
+
+AI is a collaborator in this project.
+
+The objective is not minimal change,
+but **cohesive, confident, and intentional design execution**.
+---

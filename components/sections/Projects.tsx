@@ -1,4 +1,7 @@
+"use client";
+import { motion } from "motion/react";
 import Section from "../layout/Section";
+import { listStagger, sectionItem } from "@/lib/motion";
 
 const projects = [
   {
@@ -38,31 +41,35 @@ const projects = [
 export default function Projects() {
   return (
     <Section id="projects" title="Projects">
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <motion.div
+        variants={listStagger}
+        className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+      >
         {projects.map((project) => (
-          <article
+          <motion.article
             key={project.title}
-            className="flex flex-col gap-4 rounded-lg border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+            variants={sectionItem}
+            className="flex flex-col gap-4 rounded-lg border border-subtle bg-surface p-6"
           >
             <header>
-              <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+              <h3 className="text-base font-medium leading-normal text-primary">
                 {project.title}
               </h3>
-              <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+              <p className="mt-2 text-sm font-normal leading-relaxed text-primary">
                 {project.subtitle}
               </p>
             </header>
 
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-base md:text-lg font-normal leading-relaxed text-primary">
               {project.description}
             </p>
 
-            <div className="mt-auto">
+            <div className="mt-auto space-y-4">
               <ul className="flex flex-wrap gap-2">
                 {project.techStack.map((tech) => (
                   <li
                     key={tech}
-                    className="rounded bg-neutral-100 px-2 py-1 text-xs text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+                    className="rounded border border-subtle px-2 py-2 text-sm font-normal leading-relaxed text-primary"
                   >
                     {tech}
                   </li>
@@ -70,11 +77,11 @@ export default function Projects() {
               </ul>
 
               {project.links && (
-                <div className="mt-4 flex gap-3 text-sm">
+                <div className="flex gap-4 text-sm font-normal leading-relaxed">
                   {project.links.live && (
                     <a
                       href={project.links.live}
-                      className="text-neutral-900 underline decoration-neutral-400 underline-offset-4 hover:decoration-neutral-900 dark:text-neutral-100 dark:decoration-neutral-600 dark:hover:decoration-neutral-100"
+                      className="text-accent underline underline-offset-4"
                     >
                       View Live
                     </a>
@@ -82,7 +89,7 @@ export default function Projects() {
                   {project.links.github && (
                     <a
                       href={project.links.github}
-                      className="text-neutral-900 underline decoration-neutral-400 underline-offset-4 hover:decoration-neutral-900 dark:text-neutral-100 dark:decoration-neutral-600 dark:hover:decoration-neutral-100"
+                      className="text-accent underline underline-offset-4"
                     >
                       GitHub
                     </a>
@@ -90,9 +97,9 @@ export default function Projects() {
                 </div>
               )}
             </div>
-          </article>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

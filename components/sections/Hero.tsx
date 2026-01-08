@@ -2,44 +2,9 @@
 
 import { motion } from "motion/react";
 import { MapPin, Mail, Phone, ArrowDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { heroContainer, heroItem } from "@/lib/motion";
 
-function HeroIdentity() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, translateY: 20 }}
-      animate={{ opacity: 1, translateY: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="space-y-4"
-    >
-      <h1 className="text-5xl font-semibold leading-tight md:text-6xl">
-        <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent transition-all hover:scale-[1.02] inline-block">
-          Your Name
-        </span>
-      </h1>
-      <h2 className="text-2xl md:text-3xl font-semibold text-primary">
-        Senior Frontend Engineer
-      </h2>
-    </motion.div>
-  );
-}
-
-function HeroIntro() {
-  return (
-    <motion.p
-      initial={{ opacity: 0, translateY: 20 }}
-      animate={{ opacity: 1, translateY: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-      className="text-base font-normal leading-relaxed md:text-lg text-primary max-w-2xl"
-    >
-      I build scalable, maintainable interfaces that solve real problems. With a
-      focus on performance, accessibility, and developer experience, I turn
-      complex requirements into elegant solutions.
-    </motion.p>
-  );
-}
-
-function HeroMeta() {
+export default function Hero() {
   const metaItems = [
     { icon: MapPin, text: "San Francisco, CA" },
     { icon: Mail, text: "hello@example.com" },
@@ -47,69 +12,75 @@ function HeroMeta() {
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, translateY: 20 }}
-      animate={{ opacity: 1, translateY: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="flex flex-wrap gap-6 text-sm text-primary"
-    >
-      {metaItems.map((item, index) => (
-        <div key={index} className="flex items-center gap-2">
-          <item.icon className="size-4" />
-          <span>{item.text}</span>
-        </div>
-      ))}
-    </motion.div>
-  );
-}
-
-function HeroActions() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, translateY: 20 }}
-      animate={{ opacity: 1, translateY: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-      className="flex flex-wrap gap-4"
-    >
-      <Button asChild size="lg">
-        <a href="#contact">Let&apos;s Talk</a>
-      </Button>
-      <Button asChild variant="outline" size="lg">
-        <a href="#projects">View Work</a>
-      </Button>
-    </motion.div>
-  );
-}
-
-function ScrollIndicator() {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-sm text-primary"
-    >
-      <span>Scroll to explore</span>
-      <ArrowDown className="size-4 animate-bounce" />
-    </motion.div>
-  );
-}
-
-export default function Hero() {
-  return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center"
+      className="relative min-h-screen flex items-center"
     >
       <div className="mx-auto max-w-4xl px-6 md:px-8 lg:px-12 py-20">
-        <div className="space-y-8">
-          <HeroIdentity />
-          <HeroIntro />
-          <HeroMeta />
-          <HeroActions />
-        </div>
+        <motion.div
+          variants={heroContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ amount: 0.6, once: true }}
+          className="space-y-8"
+        >
+          <motion.h1
+            variants={heroItem}
+            className="text-5xl md:text-6xl font-semibold leading-tight text-primary"
+          >
+            Your Name
+          </motion.h1>
+          <motion.h2
+            variants={heroItem}
+            className="text-2xl md:text-3xl font-semibold leading-snug text-primary"
+          >
+            Senior Frontend Engineer
+          </motion.h2>
+          <motion.p
+            variants={heroItem}
+            className="text-base md:text-lg font-normal leading-relaxed text-primary max-w-2xl"
+          >
+            I build scalable, maintainable interfaces that solve real problems.
+            With a focus on performance, accessibility, and developer
+            experience, I turn complex requirements into elegant solutions.
+          </motion.p>
+          <motion.div
+            variants={heroItem}
+            className="flex flex-wrap gap-6 text-sm font-normal leading-relaxed text-primary"
+          >
+            {metaItems.map((item) => (
+              <div key={item.text} className="flex items-center gap-2">
+                <item.icon className="size-4" />
+                <span>{item.text}</span>
+              </div>
+            ))}
+          </motion.div>
+          <motion.div variants={heroItem} className="flex flex-wrap gap-4">
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-md border border-subtle bg-surface px-6 py-4 text-base font-medium leading-normal text-accent transition-colors hover:text-accent"
+            >
+              Let&apos;s Talk
+            </a>
+            <a
+              href="#projects"
+              className="inline-flex items-center justify-center rounded-md border border-subtle px-6 py-4 text-base font-medium leading-normal text-primary transition-colors hover:bg-surface hover:text-accent"
+            >
+              View Work
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
-      <ScrollIndicator />
+      <motion.div
+        variants={heroItem}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ amount: 0.6, once: true }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-sm font-normal leading-relaxed text-primary"
+      >
+        <span>Scroll to explore</span>
+        <ArrowDown className="size-4" />
+      </motion.div>
     </section>
   );
 }

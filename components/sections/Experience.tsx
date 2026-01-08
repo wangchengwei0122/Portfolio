@@ -1,4 +1,7 @@
+"use client";
+import { motion } from "motion/react";
 import Section from "../layout/Section";
+import { listStagger, sectionItem } from "@/lib/motion";
 
 const experiences = [
   {
@@ -42,27 +45,28 @@ const experiences = [
 export default function Experience() {
   return (
     <Section id="experience" title="Experience">
-      <div className="space-y-12">
+      <motion.div variants={listStagger} className="space-y-12">
         {experiences.map((experience, index) => (
-          <article
+          <motion.article
             key={`${experience.company}-${index}`}
-            className="relative border-l-2 border-neutral-200 pl-6 dark:border-neutral-800"
+            variants={sectionItem}
+            className="relative border-l-2 border-subtle pl-6"
           >
-            <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900" />
+            <div className="absolute -left-2 top-0 h-4 w-4 rounded-full border-2 border-subtle bg-canvas" />
 
-            <header className="mb-3">
-              <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+            <header className="mb-4">
+              <h3 className="text-base font-medium leading-normal text-primary">
                 {experience.role}
               </h3>
-              <p className="text-neutral-700 dark:text-neutral-300">
+              <p className="text-base md:text-lg font-normal leading-relaxed text-primary">
                 {experience.company}
               </p>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              <p className="text-sm font-normal leading-relaxed text-primary">
                 {experience.period}
               </p>
             </header>
 
-            <p className="mb-4 text-neutral-700 dark:text-neutral-300">
+            <p className="mb-4 text-base md:text-lg font-normal leading-relaxed text-primary">
               {experience.summary}
             </p>
 
@@ -70,16 +74,16 @@ export default function Experience() {
               {experience.highlights.map((highlight, hIndex) => (
                 <li
                   key={hIndex}
-                  className="flex gap-3 text-neutral-700 dark:text-neutral-300"
+                  className="flex gap-4 text-base md:text-lg font-normal leading-relaxed text-primary"
                 >
-                  <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-neutral-400 dark:bg-neutral-600" />
+                  <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-surface" />
                   <span>{highlight}</span>
                 </li>
               ))}
             </ul>
-          </article>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

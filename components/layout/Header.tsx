@@ -7,10 +7,10 @@ import {
 
 export default function Header() {
   const linkClassName =
-    "p-0 text-base font-medium leading-normal text-primary hover:text-accent focus:text-accent focus-visible:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent hover:bg-transparent focus:bg-transparent";
+    "relative text-base font-medium leading-normal text-primary transition-colors hover:text-accent focus-visible:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 focus-visible:after:scale-x-100";
 
   return (
-    <header className="sticky top-0 z-50 bg-background border-b border-border">
+    <header className="sticky top-0 z-50 border-b border-subtle bg-canvas/90 backdrop-blur">
       <div className="mx-auto max-w-4xl px-6 md:px-8 lg:px-12 py-4">
         <nav aria-label="Primary">
           <NavigationMenu viewport={false}>
