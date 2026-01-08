@@ -24,17 +24,18 @@ Theme switching changes contrast relationships only. Structure, hierarchy, spaci
 
 ### Typography Hierarchy
 
-**Four roles only:**
+**Five roles only:**
 
 1. **Hero title** — Name/intro. Largest. Sets initial impression.
 2. **Section title** — "About", "Experience", "Projects". Clear visual break.
-3. **Body text** — All paragraph content. Optimized for reading.
-4. **Meta text** — Dates, tech tags, labels. Smallest. Clearly subordinate.
+3. **Navigation text** — Primary navigation links. Scannable, persistent.
+4. **Body text** — All paragraph content. Optimized for reading.
+5. **Meta text** — Dates, tech tags, labels. Smallest. Clearly subordinate.
 
 **Constraints:**
 - Hierarchy achieved through size and weight ONLY (no color differentiation)
 - Line height optimized for readability over compactness
-- No font sizes between these four roles
+- No font sizes between these five roles
 - Same font sizes across both themes
 
 ### Spacing & Layout Rhythm

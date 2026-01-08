@@ -7,11 +7,11 @@ import {
 
 export default function Header() {
   const linkClassName =
-    "p-0 text-primary hover:text-accent focus:text-accent focus-visible:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent hover:bg-transparent focus:bg-transparent";
+    "p-0 text-base font-medium leading-normal text-primary hover:text-accent focus:text-accent focus-visible:text-accent focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-transparent hover:bg-transparent focus:bg-transparent";
 
   return (
-    <header className="bg-transparent">
-      <div className="mx-auto max-w-4xl px-6 md:px-8 lg:px-12">
+    <header className="sticky top-0 z-50 bg-background border-b border-border">
+      <div className="mx-auto max-w-4xl px-6 md:px-8 lg:px-12 py-4">
         <nav aria-label="Primary">
           <NavigationMenu viewport={false}>
             <NavigationMenuList className="gap-6">

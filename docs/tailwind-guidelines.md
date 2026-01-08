@@ -31,10 +31,11 @@ All components must comply. No exceptions.
 ---
 
 ## TYPOGRAPHY MAPPING
-**Exactly four roles. No other sizes or weights.**
+**Exactly five roles. No other sizes or weights.**
 
 - Hero title: `text-5xl` `md:text-6xl` `font-semibold` `leading-tight`
 - Section title: `text-2xl` `md:text-3xl` `font-semibold` `leading-snug`
+- Navigation text: `text-base` `font-medium` `leading-normal`
 - Body text: `text-base` `md:text-lg` `font-normal` `leading-relaxed`
 - Meta text: `text-sm` `font-normal` `leading-relaxed`
 
@@ -42,6 +43,7 @@ Rules:
 - Hierarchy by size and weight only (no color differentiation)
 - No intermediate sizes or alternate weights
 - Same sizes across both themes
+- Navigation text remains constant across breakpoints for consistent muscle memory
 
 ---
 
