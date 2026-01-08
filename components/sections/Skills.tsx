@@ -1,7 +1,8 @@
+import Section from "../layout/Section";
+
 export default function Skills() {
   return (
-    <section id="skills">
-      <h2>Skills</h2>
+    <Section id="skills" title="Skills">
       <h3>Frontend Engineering</h3>
       <ul>
         <li>TypeScript</li>
@@ -24,6 +25,6 @@ export default function Skills() {
         <li>Performance Optimization</li>
         <li>Monitoring</li>
       </ul>
-    </section>
+    </Section>
   );
 }

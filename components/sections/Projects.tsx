@@ -1,7 +1,8 @@
+import Section from "../layout/Section";
+
 export default function Projects() {
   return (
-    <section id="projects">
-      <h2>Selected Projects</h2>
+    <Section id="projects" title="Selected Projects">
       <h3>Cross-Chain Portfolio Dashboard</h3>
       <p>
         Unified fragmented wallet data into a single view for faster
@@ -35,6 +36,6 @@ export default function Projects() {
         <li>Feature Flags</li>
         <li>Analytics</li>
       </ul>
-    </section>
+    </Section>
   );
 }

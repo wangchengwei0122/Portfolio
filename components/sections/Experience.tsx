@@ -1,7 +1,8 @@
+import Section from "../layout/Section";
+
 export default function Experience() {
   return (
-    <section id="experience">
-      <h2>Experience</h2>
+    <Section id="experience" title="Experience">
       <h3>Senior Frontend Engineer, Web3 Platform</h3>
       <p>2021–Present</p>
       <p>
@@ -20,6 +21,6 @@ export default function Experience() {
         Improved core workflows and performance for internal and customer
         dashboards.
       </p>
-    </section>
+    </Section>
   );
 }
