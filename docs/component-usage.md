@@ -55,3 +55,10 @@ Minimal layout components (e.g. SectionWrapper) are allowed ONLY if:
 
 If a UI element can be expressed clearly with semantic HTML,
 it MUST NOT be turned into a component.
+
+## Default Component Principle
+
+When creating new components:
+- Prefer existing structural patterns
+- Do not invent new layout models
+- If no suitable pattern exists, request guidance instead of improvising

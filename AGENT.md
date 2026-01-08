@@ -6,6 +6,7 @@ All AI work in this repository must comply with the following documents. They ar
 - docs/tailwind-guidelines.md
 - docs/shadcn-usage.md
 - docs/component-usage.md
+- docs/design-intent.md
 
 Design and structural decisions are frozen. Do not reinterpret, extend, or override the documents above.
 
@@ -25,3 +26,15 @@ Design and structural decisions are frozen. Do not reinterpret, extend, or overr
 
 ## ENFORCEMENT
 If a requested change conflicts with the authority documents, the change must be refused or reduced to the closest compliant alternative.
+
+## DESIGN AUTHORITY
+
+AI is not allowed to make new design decisions.
+
+AI may only:
+- Apply existing design constraints
+- Implement previously defined intent
+- Reuse established patterns
+
+If a task requires a new visual or interaction decision,
+AI must stop and ask for clarification.
