@@ -43,13 +43,13 @@ export default function Projects() {
     <Section id="projects" title="Projects">
       <motion.div
         variants={listStagger}
-        className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+        className="flex flex-col"
       >
         {projects.map((project) => (
           <motion.article
             key={project.title}
             variants={sectionItem}
-            className="flex flex-col gap-4 rounded-lg border border-subtle bg-surface p-6"
+            className="mb-8 flex flex-col gap-4 rounded-lg border border-subtle bg-surface p-6 last:mb-0"
           >
             <header>
               <h3 className="text-base font-medium leading-normal text-primary">
