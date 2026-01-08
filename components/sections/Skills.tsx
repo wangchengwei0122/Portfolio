@@ -1,30 +1,117 @@
 import Section from "../layout/Section";
+import { Code2, Server, Wrench, ShieldCheck, LucideIcon } from "lucide-react";
+
+interface Skill {
+  name: string;
+  level?: "Advanced" | "Proficient" | "Familiar";
+}
+
+interface SkillGroupProps {
+  title: string;
+  icon: LucideIcon;
+  skills: Skill[];
+}
+
+function SkillItem({ skill }: { skill: Skill }) {
+  const levelWidth = {
+    Advanced: "w-full",
+    Proficient: "w-4/5",
+    Familiar: "w-3/5",
+  };
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between gap-4">
+        <span className="text-base md:text-lg font-normal leading-relaxed text-primary">
+          {skill.name}
+        </span>
+        {skill.level && (
+          <span className="text-sm font-normal leading-relaxed text-primary">
+            {skill.level}
+          </span>
+        )}
+      </div>
+      {skill.level && (
+        <div className="h-1 bg-muted rounded-full overflow-hidden">
+          <div
+            className={`h-full bg-accent rounded-full ${levelWidth[skill.level]}`}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function SkillGroup({ title, icon: Icon, skills }: SkillGroupProps) {
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center gap-3">
+        <Icon className="size-5 text-accent" />
+        <h3 className="text-xl font-semibold text-primary">{title}</h3>
+      </div>
+      <div className="space-y-4">
+        {skills.map((skill, index) => (
+          <SkillItem key={index} skill={skill} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Skills() {
+  const skillGroups: SkillGroupProps[] = [
+    {
+      title: "Frontend",
+      icon: Code2,
+      skills: [
+        { name: "React", level: "Advanced" },
+        { name: "TypeScript", level: "Advanced" },
+        { name: "Next.js", level: "Proficient" },
+        { name: "Tailwind CSS", level: "Proficient" },
+      ],
+    },
+    {
+      title: "Backend",
+      icon: Server,
+      skills: [
+        { name: "Node.js", level: "Proficient" },
+        { name: "FastAPI", level: "Proficient" },
+        { name: "REST APIs", level: "Advanced" },
+        { name: "Python", level: "Proficient" },
+      ],
+    },
+    {
+      title: "Tools & Infrastructure",
+      icon: Wrench,
+      skills: [
+        { name: "Git / GitHub", level: "Advanced" },
+        { name: "Docker", level: "Proficient" },
+        { name: "CI/CD", level: "Proficient" },
+        { name: "Linux", level: "Proficient" },
+      ],
+    },
+    {
+      title: "Testing & Quality",
+      icon: ShieldCheck,
+      skills: [
+        { name: "Vitest", level: "Proficient" },
+        { name: "Playwright", level: "Proficient" },
+        { name: "Unit & E2E Testing", level: "Advanced" },
+        { name: "Code Review", level: "Advanced" },
+      ],
+    },
+  ];
+
   return (
     <Section id="skills" title="Skills">
-      <h3>Frontend Engineering</h3>
-      <ul>
-        <li>TypeScript</li>
-        <li>React</li>
-        <li>Next.js</li>
-        <li>State Management</li>
-        <li>Accessibility</li>
-      </ul>
-      <h3>Web3 Engineering</h3>
-      <ul>
-        <li>Solidity</li>
-        <li>Ethers.js</li>
-        <li>Wallet Integrations</li>
-        <li>Smart Contract Auditing</li>
-      </ul>
-      <h3>Platform & Delivery</h3>
-      <ul>
-        <li>CI/CD</li>
-        <li>Testing</li>
-        <li>Performance Optimization</li>
-        <li>Monitoring</li>
-      </ul>
+      <p className="text-base md:text-lg font-normal leading-relaxed text-primary mb-12">
+        Technical foundation built through years of solving complex problems.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {skillGroups.map((group, index) => (
+          <SkillGroup key={index} {...group} />
+        ))}
+      </div>
     </Section>
   );
 }
