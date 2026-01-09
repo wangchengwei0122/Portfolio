@@ -36,6 +36,7 @@ These zones may use motion, emphasis, and controlled visual contrast.
 - Other informational sections
 
 These zones must remain restrained and content-first.
+Accent utilities here are limited to interactive elements only.
 
 ---
 
@@ -48,7 +49,11 @@ Allowed tokens:
 - `bg-surface`
 - `text-primary`
 - `text-accent`
+- `text-brand-primary`
+- `text-brand-strong`
 - `border-subtle`
+- `border-brand-primary`
+- `ring-brand-ring`
 
 Rules:
 - `bg-canvas`: root container and full-width sections only
@@ -58,7 +63,8 @@ Rules:
 
 `text-accent` usage:
 - Allowed: interactive elements (links, buttons, nav active, CTAs)
-- Forbidden: headings, body text, meta text, decorative usage
+- Allowed (Expressive Zones only): hero keywords, contact identifiers
+- Forbidden: headings and body text in structured zones, decorative usage
 
 Non-interactive text ALWAYS uses `text-primary`.
 
@@ -140,6 +146,30 @@ Forbidden:
 
 ---
 
+## BRAND EMPHASIS UTILITIES
+**Use only in Expressive Zones.**
+
+Allowed:
+- `text-accent` for hero keywords and CTA labels
+- `text-brand-primary` or `text-brand-strong` for brand accents on short phrases
+- `border-brand-primary` for CTA framing
+- `ring-brand-ring` and `ring-brand-ring/40` for controlled emphasis
+
+Rules:
+- No brand colors as background fills
+- Emphasis is brief and scoped to key moments
+
+---
+
+## FORBIDDEN DECORATION UTILITIES
+**Never use for visual flavor.**
+
+- `bg-accent`, `bg-brand-*`, `text-gradient`
+- `blur`, `backdrop-blur`, `mix-blend-*`
+- `drop-shadow-*`, `shadow-[0_0_*]`
+
+---
+
 ## ICONS & DECORATION
 
 Icons are allowed ONLY when:
@@ -160,4 +190,3 @@ it does not belong in this project.
 Expression is encouraged —
 chaos is not.
 ---
-

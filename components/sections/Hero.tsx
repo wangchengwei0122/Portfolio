@@ -26,7 +26,7 @@ export default function Hero() {
         >
           <motion.h1
             variants={heroItem}
-            className="text-5xl md:text-6xl font-semibold leading-tight text-primary"
+            className="text-5xl md:text-6xl font-semibold leading-tight text-brand-primary"
           >
             Your Name
           </motion.h1>
@@ -58,10 +58,11 @@ export default function Hero() {
           <motion.div variants={heroItem} className="flex flex-wrap gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-md border border-subtle bg-surface px-6 py-4 text-base font-medium leading-normal text-accent transition-colors hover:text-accent"
+              className="inline-flex items-center justify-center rounded-md bg-brand-primary px-6 py-4 text-base font-medium leading-normal text-on-brand transition-colors hover:bg-brand-strong"
             >
               Let&apos;s Talk
             </a>
+
             <a
               href="#projects"
               className="inline-flex items-center justify-center rounded-md border border-subtle px-6 py-4 text-base font-medium leading-normal text-primary transition-colors hover:bg-surface hover:text-accent"

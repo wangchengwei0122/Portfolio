@@ -1,14 +1,18 @@
-"use client";
-import { motion } from "motion/react";
-import Section from "../layout/Section";
-import { listStagger, sectionItem } from "@/lib/motion";
+"use client"
+import { motion } from "motion/react"
+import Section from "../layout/Section"
+import { listStagger, sectionItem } from "@/lib/motion"
 
 const contactMethods = [
   { label: "Location", value: "San Francisco, CA" },
   { label: "Email", value: "hello@example.com", href: "mailto:hello@example.com" },
   { label: "GitHub", value: "github.com/username", href: "https://github.com/username" },
-  { label: "LinkedIn", value: "linkedin.com/in/username", href: "https://linkedin.com/in/username" },
-];
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/username",
+    href: "https://linkedin.com/in/username",
+  },
+]
 
 export default function Contact() {
   return (
@@ -18,14 +22,11 @@ export default function Contact() {
         className="w-full rounded-lg border border-subtle bg-surface p-12"
       >
         <div className="flex flex-col gap-12 md:flex-row">
-          <motion.div
-            variants={sectionItem}
-            className="space-y-12 md:w-1/2"
-          >
+          <motion.div variants={sectionItem} className="space-y-12 md:w-1/2">
             <div className="space-y-6">
               <p className="text-base md:text-lg font-normal leading-relaxed text-primary">
-                I&apos;m currently open to senior frontend and web3 engineering
-                opportunities. Let&apos;s build something great together.
+                I&apos;m currently open to senior frontend and web3 engineering opportunities.
+                Let&apos;s build something great together.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -45,9 +46,7 @@ export default function Contact() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-base font-medium leading-normal text-primary">
-                Get in Touch
-              </h3>
+              <h3 className="text-base font-medium leading-normal text-primary">Get in Touch</h3>
               <address className="not-italic">
                 <ul className="space-y-4">
                   {contactMethods.map((method) => (
@@ -59,10 +58,7 @@ export default function Contact() {
                         {method.label}:
                       </span>
                       {method.href ? (
-                        <a
-                          href={method.href}
-                          className="text-accent underline underline-offset-4"
-                        >
+                        <a href={method.href} className="text-accent underline underline-offset-4">
                           {method.value}
                         </a>
                       ) : (
@@ -139,5 +135,5 @@ export default function Contact() {
         </div>
       </motion.div>
     </Section>
-  );
+  )
 }

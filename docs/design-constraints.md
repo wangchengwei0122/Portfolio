@@ -43,6 +43,9 @@ Expressive zones MAY:
 - Use background contrast or subtle framing
 - Guide attention and action (CTAs)
 
+The first screen must create a visual memory point.
+After the hero, the system returns to restraint.
+
 ### Structured Zones
 These sections prioritize clarity and scannability.
 
@@ -60,13 +63,15 @@ Structured zones MUST:
 
 ## ACCENT COLOR STRATEGY
 
-**One accent color. Used intentionally.**
+**One accent hue. Used intentionally as a brand emphasis system.**
 
 - **Used for:** Links, buttons, navigation state, key CTAs
-- **Not used for:** Body text, headings, backgrounds, decoration
+- **Brand emphasis (Expressive Zones only):** Hero keywords, contact identifiers, CTA emphasis
+- **Not used for:** Body text, headings in structured zones, backgrounds, decoration
 - **Cross‑theme behavior:** Same hue, adjusted luminance only
 
-Accent color exists to signal interaction and direction — not branding.
+Accent color can signal both interaction and brand recognition.
+Brand emphasis must stay confined to expressive zones.
 
 ---
 
@@ -128,4 +133,3 @@ The portfolio should feel:
 - Designed, not assembled
 
 ---
-
