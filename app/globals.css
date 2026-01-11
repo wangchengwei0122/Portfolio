@@ -53,107 +53,124 @@
 :root {
   --radius: 0.625rem;
 
-  /* ═══ Surface ═══ */
-  --background: oklch(0.985 0.004 264); /* 干净冷白 */
-  --foreground: oklch(0.13 0.02 264); /* 近黑 - 主文本 */
-  --card: oklch(0.995 0.002 264); /* 纯净卡片 */
-  --card-foreground: oklch(0.13 0.02 264);
-  --popover: oklch(0.995 0.002 264);
-  --popover-foreground: oklch(0.13 0.02 264);
+  /* ══════════════════════════════════════════════════════════════
+     LIGHT MODE — Portfolio Presentation
+     设计思路：冷白基底 + 明确层级 + 有力的文字对比
+     ══════════════════════════════════════════════════════════════ */
+
+  /* ═══ Surface Hierarchy ═══ */
+  /* background (底) → card (浮起) → popover (最高) */
+  --background: oklch(0.965 0.004 265); /* 微灰底 - 给 card 留出浮起空间 */
+  --foreground: oklch(0.16 0.02 265); /* 主文本 - 近黑 */
+  --card: oklch(0.995 0.002 265); /* 纯净白卡 - 明显浮起 */
+  --card-foreground: oklch(0.16 0.02 265);
+  --popover: oklch(1 0 0); /* 纯白 - 最高层 */
+  --popover-foreground: oklch(0.16 0.02 265);
 
   /* ═══ Text Hierarchy ═══ */
-  --primary: oklch(0.11 0.025 264); /* 深黑 - 标题/强调 */
-  --primary-foreground: oklch(0.985 0.004 264);
-  --secondary: oklch(0.96 0.006 264); /* 浅灰背景 */
-  --secondary-foreground: oklch(0.25 0.018 264); /* 克制黑 - 副文本 ≠ 灰 */
-  --muted: oklch(0.96 0.006 264);
-  --muted-foreground: oklch(0.38 0.012 264); /* 辅助说明 - 仍可读 */
+  /* primary (标题) > secondary-foreground (副文本) > muted-foreground (辅助) */
+  --primary: oklch(0.085 0.025 265); /* 深黑 - 标题/强调，有存在感 */
+  --primary-foreground: oklch(0.98 0.003 265);
+  --secondary: oklch(0.945 0.006 265); /* 次级表面背景 */
+  --secondary-foreground: oklch(0.32 0.015 265); /* 副文本 - 清晰深灰，绝不糊 */
+  --muted: oklch(0.945 0.006 265);
+  --muted-foreground: oklch(0.48 0.012 265); /* 辅助说明 - 弱但可读 */
 
-  /* ═══ Accent - Steel Cyan ═══ */
-  /* 低饱和冷青，Stripe/Linear 工程气质，不抢 H1 */
-  --accent: oklch(0.48 0.08 210);
-  --accent-foreground: oklch(0.98 0.005 210);
+  /* ═══ Accent — Electric Teal ═══ */
+  /* 点睛色：够亮眼、够工程感、不刺眼 */
+  /* Hue 195 = 青色偏绿，Supabase/Vercel 同类气质 */
+  --accent: oklch(0.58 0.155 195); /* 高饱和青 - 一眼能看到 */
+  --accent-foreground: oklch(0.98 0.01 195);
 
-  /* ═══ Brand - Hero/CTA 专用 ═══ */
-  --brand-primary: oklch(0.46 0.09 210);
-  --brand-muted: oklch(0.95 0.025 210);
-  --brand-strong: oklch(0.38 0.10 210);
-  --brand-ring: oklch(0.48 0.08 210 / 0.30);
+  /* ═══ Brand — Hero/CTA 专用 ═══ */
+  /* 比 accent 稍深沉，更有"按钮感" */
+  --brand-primary: oklch(0.55 0.16 195); /* 主 CTA */
+  --brand-muted: oklch(0.94 0.04 195); /* 浅底 wash */
+  --brand-strong: oklch(0.48 0.17 195); /* hover / pressed */
+  --brand-ring: oklch(0.58 0.155 195 / 0.35);
 
   /* ═══ Semantic ═══ */
-  --destructive: oklch(0.55 0.24 25);
-  --border: oklch(0.91 0.006 264);
-  --input: oklch(0.91 0.006 264);
-  --ring: oklch(0.48 0.08 210 / 0.35);
+  --destructive: oklch(0.55 0.22 27);
+  --border: oklch(0.885 0.006 265); /* 可见的分割线 */
+  --input: oklch(0.885 0.006 265);
+  --ring: oklch(0.58 0.155 195 / 0.4);
 
-  /* ═══ Chart ═══ */
-  --chart-1: oklch(0.58 0.2 195); /* cyan */
-  --chart-2: oklch(0.62 0.18 145); /* teal */
-  --chart-3: oklch(0.55 0.22 280); /* violet */
-  --chart-4: oklch(0.68 0.16 55); /* amber */
-  --chart-5: oklch(0.58 0.2 340); /* rose */
+  /* ═══ Chart Palette ═══ */
+  /* 高饱和、可区分、现代感 */
+  --chart-1: oklch(0.62 0.19 195); /* Cyan */
+  --chart-2: oklch(0.64 0.17 155); /* Teal-Green */
+  --chart-3: oklch(0.58 0.21 280); /* Violet */
+  --chart-4: oklch(0.72 0.16 70); /* Amber */
+  --chart-5: oklch(0.62 0.19 345); /* Rose */
 
   /* ═══ Sidebar ═══ */
-  --sidebar: oklch(0.98 0.004 264);
-  --sidebar-foreground: oklch(0.13 0.02 264);
-  --sidebar-primary: oklch(0.11 0.025 264);
-  --sidebar-primary-foreground: oklch(0.985 0.004 264);
-  --sidebar-accent: oklch(0.96 0.006 264);
-  --sidebar-accent-foreground: oklch(0.25 0.018 264);
-  --sidebar-border: oklch(0.91 0.006 264);
-  --sidebar-ring: oklch(0.48 0.08 210 / 0.35);
+  --sidebar: oklch(0.975 0.004 265);
+  --sidebar-foreground: oklch(0.16 0.02 265);
+  --sidebar-primary: oklch(0.085 0.025 265);
+  --sidebar-primary-foreground: oklch(0.98 0.003 265);
+  --sidebar-accent: oklch(0.935 0.006 265);
+  --sidebar-accent-foreground: oklch(0.32 0.015 265);
+  --sidebar-border: oklch(0.885 0.006 265);
+  --sidebar-ring: oklch(0.58 0.155 195 / 0.4);
 }
 
 .dark {
-  /* ═══ Surface ═══ */
-  --background: oklch(0.12 0.015 264); /* 深邃但不死黑 */
-  --foreground: oklch(0.94 0.008 264); /* 近白 - 主文本 */
-  --card: oklch(0.15 0.015 264); /* 微抬卡片 */
-  --card-foreground: oklch(0.94 0.008 264);
-  --popover: oklch(0.15 0.015 264);
-  --popover-foreground: oklch(0.94 0.008 264);
+  /* ══════════════════════════════════════════════════════════════
+     DARK MODE — Portfolio Presentation
+     设计思路：深邃但不死黑 + 层级拉开 + accent 提亮
+     ══════════════════════════════════════════════════════════════ */
+
+  /* ═══ Surface Hierarchy ═══ */
+  /* 更明显的高度差，让 card 真正"浮起来" */
+  --background: oklch(0.115 0.015 265); /* 深空底色 - 有质感的深 */
+  --foreground: oklch(0.92 0.008 265); /* 主文本 - 干净白 */
+  --card: oklch(0.165 0.015 265); /* 卡片 - 显著抬升 */
+  --card-foreground: oklch(0.92 0.008 265);
+  --popover: oklch(0.19 0.015 265); /* 弹出层 - 最高 */
+  --popover-foreground: oklch(0.92 0.008 265);
 
   /* ═══ Text Hierarchy ═══ */
-  --primary: oklch(0.97 0.006 264); /* 亮白 - 标题/强调 */
-  --primary-foreground: oklch(0.12 0.015 264);
-  --secondary: oklch(0.2 0.012 264); /* 深灰背景 */
-  --secondary-foreground: oklch(0.82 0.01 264); /* 克制白 - 副文本 ≠ 灰 */
-  --muted: oklch(0.2 0.012 264);
-  --muted-foreground: oklch(0.68 0.01 264); /* 辅助说明 - 仍可读 */
+  --primary: oklch(0.965 0.005 265); /* 亮白 - 标题醒目 */
+  --primary-foreground: oklch(0.115 0.015 265);
+  --secondary: oklch(0.22 0.012 265); /* 次级表面 */
+  --secondary-foreground: oklch(0.76 0.008 265); /* 副文本 - 清晰可读的浅白 */
+  --muted: oklch(0.22 0.012 265);
+  --muted-foreground: oklch(0.58 0.008 265); /* 辅助 - dim but legible */
 
-  /* ═══ Accent - Steel Cyan ═══ */
-  /* dark 下稍提亮，但仍克制，不抢文案 */
-  --accent: oklch(0.62 0.09 210);
-  --accent-foreground: oklch(0.12 0.015 210);
+  /* ═══ Accent — Electric Teal ═══ */
+  /* 暗底上提亮，保持视觉冲击 */
+  --accent: oklch(0.72 0.14 195); /* 亮青 - 黑底上跳出来 */
+  --accent-foreground: oklch(0.12 0.015 195);
 
-  /* ═══ Brand - Hero/CTA 专用 ═══ */
-  --brand-primary: oklch(0.60 0.10 210);
-  --brand-muted: oklch(0.20 0.04 210);
-  --brand-strong: oklch(0.70 0.08 210);
-  --brand-ring: oklch(0.62 0.09 210 / 0.35);
+  /* ═══ Brand ═══ */
+  --brand-primary: oklch(0.68 0.15 195);
+  --brand-muted: oklch(0.22 0.055 195);
+  --brand-strong: oklch(0.78 0.13 195);
+  --brand-ring: oklch(0.72 0.14 195 / 0.4);
 
   /* ═══ Semantic ═══ */
-  --destructive: oklch(0.65 0.22 25);
-  --border: oklch(0.26 0.012 264);
-  --input: oklch(0.26 0.012 264);
-  --ring: oklch(0.62 0.09 210 / 0.4);
+  --destructive: oklch(0.62 0.2 27);
+  --border: oklch(0.27 0.012 265); /* 可见但不抢戏 */
+  --input: oklch(0.27 0.012 265);
+  --ring: oklch(0.72 0.14 195 / 0.45);
 
   /* ═══ Chart ═══ */
-  --chart-1: oklch(0.72 0.18 195);
-  --chart-2: oklch(0.7 0.16 145);
-  --chart-3: oklch(0.68 0.2 280);
-  --chart-4: oklch(0.75 0.14 55);
-  --chart-5: oklch(0.68 0.18 340);
+  /* dark 下整体提亮 */
+  --chart-1: oklch(0.74 0.17 195);
+  --chart-2: oklch(0.72 0.15 155);
+  --chart-3: oklch(0.7 0.19 280);
+  --chart-4: oklch(0.78 0.14 70);
+  --chart-5: oklch(0.72 0.17 345);
 
   /* ═══ Sidebar ═══ */
-  --sidebar: oklch(0.14 0.015 264);
-  --sidebar-foreground: oklch(0.94 0.008 264);
-  --sidebar-primary: oklch(0.97 0.006 264);
-  --sidebar-primary-foreground: oklch(0.12 0.015 264);
-  --sidebar-accent: oklch(0.2 0.012 264);
-  --sidebar-accent-foreground: oklch(0.82 0.01 264);
-  --sidebar-border: oklch(0.26 0.012 264);
-  --sidebar-ring: oklch(0.62 0.09 210 / 0.4);
+  --sidebar: oklch(0.135 0.015 265);
+  --sidebar-foreground: oklch(0.92 0.008 265);
+  --sidebar-primary: oklch(0.965 0.005 265);
+  --sidebar-primary-foreground: oklch(0.115 0.015 265);
+  --sidebar-accent: oklch(0.22 0.012 265);
+  --sidebar-accent-foreground: oklch(0.76 0.008 265);
+  --sidebar-border: oklch(0.27 0.012 265);
+  --sidebar-ring: oklch(0.72 0.14 195 / 0.45);
 }
 
 @layer base {

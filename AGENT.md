@@ -19,39 +19,48 @@ listed in order of precedence:
 3. docs/component-usage.md
 4. docs/shadcn-usage.md
 
-When conflicts arise, **design intent takes priority over strict constraint interpretation**.
+When conflicts arise, **docs/design-system.md takes priority**.
 
 ---
 
-## DESIGN ZONES
+## VISUAL INTENSITY LEVELS
 
-The system recognizes two behavioral zones:
+AI must classify every change into one of the following levels **before making modifications**.
 
-### Expressive Zones
+### Level 3 — Showcase Zones
 
 - Header
 - Hero
 - Contact
 
-In expressive zones, AI is explicitly allowed — and encouraged — to:
+AI is explicitly encouraged to:
 
-- Improve visual quality
-- Apply motion, hierarchy, and emphasis
-- Make layout and presentation decisions
-- Enhance first impression and emotional impact
+- Increase visual impact
+- Improve memorability
+- Use controlled gradients, surfaces, and motion
+- Make structural layout decisions
 
-### Structured Zones
+Safe-but-boring output in Level 3 is considered a failure.
 
-- Skills
+### Level 2 — Feature Modules
+
 - Projects
+- Skills
 - Experience
-- Other informational sections
 
-In structured zones, AI must:
+AI should:
 
-- Preserve clarity and predictability
-- Avoid unnecessary visual expression
-- Reuse established layout patterns
+- Enhance clarity and structure
+- Use cards, grouping, and restrained emphasis
+- Maintain consistency with established patterns
+
+### Level 1 — Content Zones
+
+AI must:
+
+- Preserve clarity and simplicity
+- Avoid visual expression
+- Optimize for reading and scanning
 
 ---
 
@@ -64,6 +73,7 @@ AI MUST:
 - Reuse visual and interaction patterns established elsewhere
 - Respect spacing, typography, and token systems
 - Prefer consistency over novelty
+- Prefer **impactful clarity** over minimal change in Level 3 zones
 
 AI SHOULD:
 
