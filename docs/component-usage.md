@@ -6,6 +6,7 @@ Components are not just technical abstractions —
 they are **visual and structural building blocks** of a coherent system.
 
 The goal is:
+
 - Strong first impression
 - Visual consistency
 - Long-term scalability without fragmentation
@@ -15,6 +16,7 @@ The goal is:
 ## Component Philosophy
 
 Components exist to:
+
 - Encode repeated visual patterns
 - Preserve layout rhythm
 - Enforce consistency across sections
@@ -24,39 +26,61 @@ Avoiding components is **not** a virtue in a presentation-driven system.
 
 ---
 
-## Expressive Zones (Critical)
+## Visual Intensity Levels (Component Responsibility)
 
-The following sections are **expression-critical**:
+Components must respect the system's **visual intensity levels**.
+
+### Level 3 — Showcase Zones
+
+Applies to:
 
 - Header
 - Hero
 - Contact
 
-In expressive zones, components MAY:
-- Define layout and visual structure
-- Encapsulate presentation logic
-- Contain motion and interaction
-- Establish hierarchy and emphasis
+In Level 3 zones, components MAY:
 
-Expressive zones are allowed to look *designed*.
+- Define layout and visual structure
+- Own presentation and emphasis
+- Include motion, layered surfaces, and hierarchy
+- Act as visual anchors for the page
+
+These zones are expected to feel **designed and memorable**.
 
 ---
 
-## Structured Zones
+### Level 2 — Feature Modules
 
-The following sections are **content-driven**:
+Applies to:
 
-- Skills
 - Projects
+- Skills
 - Experience
-- Education
-- Any informational sections
+- Other card-based feature sections
 
-In structured zones, components SHOULD:
+In Level 2 zones, components SHOULD:
+
 - Be reusable and predictable
-- Avoid excessive visual expression
-- Focus on clarity and scannability
-- Reuse patterns established elsewhere
+- Use restrained but intentional visual styling
+- Support cards, grouping, and emphasis
+- Avoid hero-level effects
+
+---
+
+### Level 1 — Content Zones
+
+Applies to:
+
+- Long descriptions
+- Lists
+- Supporting text
+- Dense informational content
+
+In Level 1 zones, components MUST:
+
+- Prioritize readability
+- Avoid visual expression
+- Remain monochrome-first
 
 ---
 
@@ -70,6 +94,7 @@ Create a component when **any** of the following is true:
 - The element represents a conceptual unit (Section, Item, Card, Row)
 
 Examples:
+
 - Section
 - SectionHeader
 - ExperienceItem
@@ -96,17 +121,20 @@ Avoiding components by default is **not encouraged**.
 Layout components are **explicitly allowed**.
 
 They MAY:
+
 - Control spacing and width
 - Apply consistent section rhythm
 - Encapsulate semantic structure
 - Define visual grouping
 
 They MUST:
+
 - Preserve semantic HTML
 - Avoid hidden side effects
 - Feel native to the system
 
 Examples:
+
 - Section
 - Container
 - Stack
@@ -119,6 +147,7 @@ Examples:
 Components are allowed to own **visual decisions**.
 
 This includes:
+
 - Spacing
 - Alignment
 - Visual grouping
