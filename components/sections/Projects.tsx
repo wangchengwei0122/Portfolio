@@ -1,6 +1,6 @@
-"use client";
-import { motion } from "motion/react";
-import { sectionContainer, listStagger, sectionItem } from "@/lib/motion";
+"use client"
+import { motion } from "motion/react"
+import { sectionContainer, listStagger, sectionItem } from "@/lib/motion"
 
 /**
  * Project media slot extension:
@@ -9,12 +9,12 @@ import { sectionContainer, listStagger, sectionItem } from "@/lib/motion";
  */
 
 const projects: Array<{
-  title: string;
-  subtitle: string;
-  description: string;
-  techStack: string[];
-  links?: { live?: string; github?: string };
-  media?: React.ReactNode;
+  title: string
+  subtitle: string
+  description: string
+  techStack: string[]
+  links?: { live?: string; github?: string }
+  media?: React.ReactNode
 }> = [
   {
     title: "Fundr",
@@ -48,7 +48,7 @@ const projects: Array<{
       live: "#",
     },
   },
-];
+]
 
 export default function Projects() {
   return (
@@ -61,14 +61,13 @@ export default function Projects() {
         viewport={{ amount: 0.2, once: true }}
       >
         <motion.header variants={sectionItem} className="mb-12 space-y-4">
-          <p className="text-sm font-medium uppercase tracking-widest text-secondary">
+          <p className="text-sm font-medium uppercase tracking-widest text-secondary-foreground">
             Case Studies
           </p>
-          <h2 className="text-2xl font-semibold leading-snug text-primary md:text-3xl">
-            Projects
-          </h2>
-          <p className="max-w-2xl text-base leading-relaxed text-secondary">
-            Real-world problems I've solved—from concept to production. Each project reflects my approach to building reliable, user-focused software.
+          <h2 className="text-2xl font-semibold leading-snug text-primary md:text-3xl">Projects</h2>
+          <p className="max-w-2xl text-base leading-relaxed text-secondary-foreground">
+            Real-world problems I've solved—from concept to production. Each project reflects my
+            approach to building reliable, user-focused software.
           </p>
         </motion.header>
 
@@ -133,7 +132,7 @@ export default function Projects() {
         </motion.div>
       </motion.div>
     </section>
-  );
+  )
 }
 
 /**

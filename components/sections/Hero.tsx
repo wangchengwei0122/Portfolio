@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import { motion } from "motion/react";
-import { ArrowDown } from "lucide-react";
-import { heroContainer, heroItem } from "@/lib/motion";
+import { motion } from "motion/react"
+import { ArrowDown } from "lucide-react"
+import { heroContainer, heroItem } from "@/lib/motion"
 
 export default function Hero() {
   return (
@@ -17,7 +17,7 @@ export default function Hero() {
         >
           <motion.p
             variants={heroItem}
-            className="text-sm font-medium uppercase tracking-widest text-secondary"
+            className="text-sm font-medium uppercase tracking-widest text-secondary-foreground"
           >
             Senior Frontend Engineer
           </motion.p>
@@ -34,12 +34,11 @@ export default function Hero() {
 
           <motion.p
             variants={heroItem}
-            className="max-w-2xl text-base font-normal leading-relaxed text-secondary md:text-lg"
+            className="max-w-2xl text-base font-normal leading-relaxed text-secondary-foreground md:text-lg"
           >
-            5+ years turning ambiguous product specs into performant, accessible
-            frontends. I've built trading UIs handling millions in TVL,
-            crowdfunding platforms with on-chain governance, and data systems
-            used daily by 200+ enterprise users.
+            5+ years turning ambiguous product specs into performant, accessible frontends. I've
+            built trading UIs handling millions in TVL, crowdfunding platforms with on-chain
+            governance, and data systems used daily by 200+ enterprise users.
           </motion.p>
 
           <motion.div variants={heroItem} className="flex flex-wrap gap-4 pt-4">
@@ -65,13 +64,13 @@ export default function Hero() {
         initial="hidden"
         whileInView="show"
         viewport={{ amount: 0.6, once: true }}
-        className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-sm font-normal leading-relaxed text-secondary"
+        className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-sm font-normal leading-relaxed text-secondary-foreground"
       >
         <span>Scroll to explore</span>
         <ArrowDown className="size-4" />
       </motion.div>
     </section>
-  );
+  )
 }
 
 /**
