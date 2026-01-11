@@ -1,127 +1,180 @@
-"use client";
-import { motion } from "motion/react";
-import Section from "../layout/Section";
-import { Code2, Server, Wrench, ShieldCheck, LucideIcon } from "lucide-react";
-import { listStagger, sectionItem } from "@/lib/motion";
+"use client"
+import { motion } from "motion/react"
+import { Code2, Server, Wrench, ShieldCheck, LucideIcon } from "lucide-react"
+import { sectionContainer, listStagger, sectionItem } from "@/lib/motion"
 
-interface Skill {
-  name: string;
-  level?: "Advanced" | "Proficient" | "Familiar";
+/**
+ * ═══════════════════════════════════════════════════════════════════════════════
+ * SKILLS SECTION — Capability Cards
+ * ═══════════════════════════════════════════════════════════════════════════════
+ *
+ * Visual Style: Matches Projects card system
+ * - Subtle glass bg + border (no strong glow)
+ * - Hover: gentle lift + shadow
+ * - Content-first, value-oriented copy
+ */
+
+interface SkillCard {
+  title: string
+  icon: LucideIcon
+  skills: string[]
+  summary: string
 }
 
-interface SkillGroupProps {
-  title: string;
-  icon: LucideIcon;
-  skills: Skill[];
-}
+const skillCards: SkillCard[] = [
+  {
+    title: "Frontend",
+    icon: Code2,
+    skills: [
+      "React / Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "State Management",
+      "Performance Optimization",
+    ],
+    summary: "Shipping production UIs for trading platforms and data-intensive dashboards.",
+  },
+  {
+    title: "Backend",
+    icon: Server,
+    skills: [
+      "Node.js / Express",
+      "Python / FastAPI",
+      "REST & GraphQL APIs",
+      "PostgreSQL / Redis",
+    ],
+    summary: "Building APIs that handle real-time data streams and high-throughput workloads.",
+  },
+  {
+    title: "Tools & Infrastructure",
+    icon: Wrench,
+    skills: [
+      "Git / GitHub Actions",
+      "Docker / Kubernetes",
+      "CI/CD Pipelines",
+      "Linux / Shell",
+    ],
+    summary: "Automating deployments and maintaining reliable infrastructure at scale.",
+  },
+  {
+    title: "Testing & Quality",
+    icon: ShieldCheck,
+    skills: [
+      "Vitest / Jest",
+      "Playwright / Cypress",
+      "Unit & E2E Testing",
+      "Code Review",
+    ],
+    summary: "Shipping with confidence through comprehensive testing strategies.",
+  },
+]
 
-function SkillItem({ skill }: { skill: Skill }) {
-  const levelWidth = {
-    Advanced: "w-full",
-    Proficient: "w-4/5",
-    Familiar: "w-3/5",
-  };
+function SkillCardComponent({ card }: { card: SkillCard }) {
+  const Icon = card.icon
 
   return (
-    <div className="space-y-2">
-      <div className="flex items-center justify-between gap-4">
-        <span className="text-base md:text-lg font-normal leading-relaxed text-primary">
-          {skill.name}
-        </span>
-        {skill.level && (
-          <span className="text-sm font-normal leading-relaxed text-primary">
-            {skill.level}
-          </span>
-        )}
-      </div>
-      {skill.level && (
-        <div className="h-1 rounded-full border border-subtle overflow-hidden">
-          <div
-            className={`h-full bg-surface ${levelWidth[skill.level]}`}
-          />
+    <div
+      className="group flex h-full flex-col rounded-2xl border border-border/40 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/20 hover:bg-card/80 hover:shadow-md"
+    >
+      {/* Header: Icon + Title */}
+      <div className="mb-5 flex items-center gap-3">
+        <div className="flex size-10 items-center justify-center rounded-lg bg-accent/10">
+          <Icon className="size-5 text-accent" />
         </div>
-      )}
-    </div>
-  );
-}
-
-function SkillGroup({ title, icon: Icon, skills }: SkillGroupProps) {
-  return (
-    <div className="space-y-6">
-      <div className="flex items-center gap-4">
-        <Icon className="size-5 text-primary" />
-        <h3 className="text-base font-medium leading-normal text-primary">
-          {title}
+        <h3 className="text-base font-semibold text-primary md:text-lg">
+          {card.title}
         </h3>
       </div>
-      <div className="space-y-4">
-        {skills.map((skill, index) => (
-          <SkillItem key={index} skill={skill} />
+
+      {/* Skills List */}
+      <ul className="mb-5 flex-1 space-y-2.5">
+        {card.skills.map((skill) => (
+          <li
+            key={skill}
+            className="flex items-center gap-2 text-sm text-secondary-foreground"
+          >
+            <span className="size-1 rounded-full bg-accent/60" />
+            {skill}
+          </li>
         ))}
-      </div>
+      </ul>
+
+      {/* Summary */}
+      <p className="border-t border-border/30 pt-4 text-sm leading-relaxed text-muted-foreground">
+        {card.summary}
+      </p>
     </div>
-  );
+  )
 }
 
 export default function Skills() {
-  const skillGroups: SkillGroupProps[] = [
-    {
-      title: "Frontend",
-      icon: Code2,
-      skills: [
-        { name: "React", level: "Advanced" },
-        { name: "TypeScript", level: "Advanced" },
-        { name: "Next.js", level: "Proficient" },
-        { name: "Tailwind CSS", level: "Proficient" },
-      ],
-    },
-    {
-      title: "Backend",
-      icon: Server,
-      skills: [
-        { name: "Node.js", level: "Proficient" },
-        { name: "FastAPI", level: "Proficient" },
-        { name: "REST APIs", level: "Advanced" },
-        { name: "Python", level: "Proficient" },
-      ],
-    },
-    {
-      title: "Tools & Infrastructure",
-      icon: Wrench,
-      skills: [
-        { name: "Git / GitHub", level: "Advanced" },
-        { name: "Docker", level: "Proficient" },
-        { name: "CI/CD", level: "Proficient" },
-        { name: "Linux", level: "Proficient" },
-      ],
-    },
-    {
-      title: "Testing & Quality",
-      icon: ShieldCheck,
-      skills: [
-        { name: "Vitest", level: "Proficient" },
-        { name: "Playwright", level: "Proficient" },
-        { name: "Unit & E2E Testing", level: "Advanced" },
-        { name: "Code Review", level: "Advanced" },
-      ],
-    },
-  ];
-
   return (
-    <Section id="skills" title="Skills">
-      <p className="text-base md:text-lg font-normal leading-relaxed text-primary">
-        Technical foundation built through years of solving complex problems.
-      </p>
+    <section id="skills" className="relative py-24">
       <motion.div
-        variants={listStagger}
-        className="grid grid-cols-1 md:grid-cols-2 gap-12"
+        className="mx-auto max-w-5xl px-6 md:px-8 lg:px-12"
+        variants={sectionContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ amount: 0.15, once: true }}
       >
-        {skillGroups.map((group, index) => (
-          <motion.div key={index} variants={sectionItem}>
-            <SkillGroup {...group} />
-          </motion.div>
-        ))}
+        {/* Section Header */}
+        <motion.header variants={sectionItem} className="mb-12 space-y-4">
+          <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+            Technical Foundation
+          </p>
+          <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">
+            Skills
+          </h2>
+          <p className="max-w-2xl text-base leading-relaxed text-secondary-foreground md:text-lg">
+            Built through years of solving complex problems across the full stack.
+          </p>
+        </motion.header>
+
+        {/* Skills Grid */}
+        <motion.div
+          variants={listStagger}
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2"
+        >
+          {skillCards.map((card) => (
+            <motion.div key={card.title} variants={sectionItem}>
+              <SkillCardComponent card={card} />
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
-    </Section>
-  );
+    </section>
+  )
 }
+
+/**
+ * ═══════════════════════════════════════════════════════════════════════════════
+ * DESIGN DECISIONS
+ * ═══════════════════════════════════════════════════════════════════════════════
+ *
+ * 1. Card Style (Consistent with Projects)
+ *    - border-border/40 bg-card/50 backdrop-blur-sm
+ *    - rounded-2xl for premium feel
+ *    - No strong glow in default state
+ *
+ * 2. Hover Behavior
+ *    - -translate-y-0.5: minimal lift
+ *    - border-accent/20: subtle accent hint
+ *    - shadow-md: gentle shadow increase
+ *
+ * 3. Content Structure
+ *    - Icon + Title: establishes category
+ *    - Skills List: scannable, no progress bars
+ *    - Summary: value-oriented statement
+ *
+ * 4. Copy Style
+ *    - No "Advanced / Proficient" levels
+ *    - Focus on what I've built, not self-assessment
+ *    - Summary answers "what value do I bring?"
+ *
+ * 5. Visual Hierarchy
+ *    - Less prominent than Hero
+ *    - Equal weight with Projects (supporting content)
+ *    - Scannable 2x2 grid layout
+ *
+ * ═══════════════════════════════════════════════════════════════════════════════
+ */
