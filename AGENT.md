@@ -14,11 +14,10 @@ but as a **design-aware system contributor** within defined boundaries.
 All AI work in this repository must comply with the following documents,
 listed in order of precedence:
 
-1. docs/design-intent.md
-2. docs/design-constraints.md
-3. docs/tailwind-guidelines.md
-4. docs/component-usage.md
-5. docs/shadcn-usage.md
+1. docs/design-system.md
+2. docs/tailwind-guidelines.md
+3. docs/component-usage.md
+4. docs/shadcn-usage.md
 
 When conflicts arise, **design intent takes priority over strict constraint interpretation**.
 
@@ -29,23 +28,27 @@ When conflicts arise, **design intent takes priority over strict constraint inte
 The system recognizes two behavioral zones:
 
 ### Expressive Zones
+
 - Header
 - Hero
 - Contact
 
 In expressive zones, AI is explicitly allowed — and encouraged — to:
+
 - Improve visual quality
 - Apply motion, hierarchy, and emphasis
 - Make layout and presentation decisions
 - Enhance first impression and emotional impact
 
 ### Structured Zones
+
 - Skills
 - Projects
 - Experience
 - Other informational sections
 
 In structured zones, AI must:
+
 - Preserve clarity and predictability
 - Avoid unnecessary visual expression
 - Reuse established layout patterns
@@ -55,6 +58,7 @@ In structured zones, AI must:
 ## REQUIRED BEHAVIOR
 
 AI MUST:
+
 - Treat the portfolio as a designed system, not a document
 - Actively improve perceived quality when working in expressive zones
 - Reuse visual and interaction patterns established elsewhere
@@ -62,6 +66,7 @@ AI MUST:
 - Prefer consistency over novelty
 
 AI SHOULD:
+
 - Suggest improvements when quality can be raised
 - Encapsulate repeated patterns into components
 - Apply motion and transitions deliberately
@@ -72,6 +77,7 @@ AI SHOULD:
 ## FORBIDDEN ACTIONS
 
 AI MUST NOT:
+
 - Introduce visual noise or gratuitous decoration
 - Add infinite or looping animations
 - Break established rhythm or hierarchy
@@ -110,4 +116,5 @@ AI is a collaborator in this project.
 
 The objective is not minimal change,
 but **cohesive, confident, and intentional design execution**.
+
 ---
