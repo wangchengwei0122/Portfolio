@@ -2,6 +2,15 @@
 
 import { motion } from "motion/react"
 import { ArrowRight, Layers, Cpu, Activity, Blocks } from "lucide-react"
+import {
+  heroContainerVariants,
+  heroItemVariants,
+  heroVisualContainerVariants,
+  heroCardVariants,
+  heroFloatVariants,
+  heroFloatDelayedVariants,
+  heroPulseVariants,
+} from "@/lib/motion"
 
 /**
  * ═══════════════════════════════════════════════════════════════════════════════
@@ -19,85 +28,6 @@ import { ArrowRight, Layers, Cpu, Activity, Blocks } from "lucide-react"
  * 5. Right visual (glass cards + gradient glow) → "complex systems" metaphor
  */
 
-// ─── Motion Variants ───────────────────────────────────────────────────────────
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
-    },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.4, 0.25, 1] },
-  },
-}
-
-const visualContainerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.3,
-    },
-  },
-}
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.6, ease: [0.25, 0.4, 0.25, 1] },
-  },
-}
-
-const floatVariants = {
-  initial: { y: 0 },
-  animate: {
-    y: [-8, 8, -8],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  },
-}
-
-const floatDelayedVariants = {
-  initial: { y: 0 },
-  animate: {
-    y: [8, -8, 8],
-    transition: {
-      duration: 7,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  },
-}
-
-const pulseVariants = {
-  initial: { opacity: 0.4 },
-  animate: {
-    opacity: [0.4, 0.8, 0.4],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  },
-}
-
 // ─── Component ─────────────────────────────────────────────────────────────────
 
 export default function Hero() {
@@ -114,7 +44,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-6 py-20 md:px-8 lg:grid-cols-2 lg:gap-16 lg:px-12">
         {/* ═══ Left: Content Area ═══ */}
         <motion.div
-          variants={containerVariants}
+          variants={heroContainerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ amount: 0.4, once: true }}
@@ -122,7 +52,7 @@ export default function Hero() {
         >
           {/* Eyebrow - Role identifier */}
           <motion.p
-            variants={itemVariants}
+            variants={heroItemVariants}
             className="text-sm font-medium tracking-widest text-muted-foreground uppercase"
           >
             Frontend Systems Engineer
@@ -131,26 +61,22 @@ export default function Hero() {
           {/* Headline - Core value proposition */}
           {/* text-gradient creates the cyan→indigo gradient effect */}
           <motion.h1
-            variants={itemVariants}
+            variants={heroItemVariants}
             className="text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl"
           >
-            <span className="text-gradient">
-              Building interfaces
-            </span>
+            <span className="text-gradient">Building interfaces</span>
             <br />
-            <span className="text-primary">
-              for complex systems.
-            </span>
+            <span className="text-primary">for complex systems.</span>
           </motion.h1>
 
           {/* Supporting Copy - Proof points */}
           <motion.div
-            variants={itemVariants}
+            variants={heroItemVariants}
             className="max-w-md space-y-3 text-base leading-relaxed text-secondary-foreground md:text-lg"
           >
             <p>
-              5 years shipping production frontends—trading platforms,
-              real-time dashboards, data-intensive enterprise tools.
+              5 years shipping production frontends—trading platforms, real-time dashboards,
+              data-intensive enterprise tools.
             </p>
             <p className="text-muted-foreground">
               I turn ambiguous requirements into systems that scale.
@@ -158,7 +84,7 @@ export default function Hero() {
           </motion.div>
 
           {/* CTA Group */}
-          <motion.div variants={itemVariants} className="flex items-center gap-5 pt-4">
+          <motion.div variants={heroItemVariants} className="flex items-center gap-5 pt-4">
             {/* Primary CTA - with glow effect */}
             <a
               href="#projects"
@@ -181,7 +107,7 @@ export default function Hero() {
         {/* ═══ Right: Visual Area ═══ */}
         {/* Represents "complex systems" through layered glass cards */}
         <motion.div
-          variants={visualContainerVariants}
+          variants={heroVisualContainerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ amount: 0.3, once: true }}
@@ -191,7 +117,7 @@ export default function Hero() {
           <div className="relative h-[400px] w-full max-w-[500px] md:h-[480px]">
             {/* ─── Gradient Glow Source ─── */}
             <motion.div
-              variants={pulseVariants}
+              variants={heroPulseVariants}
               initial="initial"
               animate="animate"
               className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full hero-gradient opacity-30 blur-3xl"
@@ -199,11 +125,11 @@ export default function Hero() {
 
             {/* ─── Card Layer 1: Main System Card ─── */}
             <motion.div
-              variants={cardVariants}
+              variants={heroCardVariants}
               className="absolute left-4 top-8 z-30 w-72 md:left-8 md:w-80"
             >
               <motion.div
-                variants={floatVariants}
+                variants={heroFloatVariants}
                 initial="initial"
                 animate="animate"
                 className="glass-highlight elevated-lg rounded-2xl p-5"
@@ -244,11 +170,11 @@ export default function Hero() {
 
             {/* ─── Card Layer 2: Activity Card ─── */}
             <motion.div
-              variants={cardVariants}
+              variants={heroCardVariants}
               className="absolute right-4 top-32 z-20 w-56 md:right-0 md:w-64"
             >
               <motion.div
-                variants={floatDelayedVariants}
+                variants={heroFloatDelayedVariants}
                 initial="initial"
                 animate="animate"
                 className="glass elevated rounded-xl p-4"
@@ -272,11 +198,11 @@ export default function Hero() {
 
             {/* ─── Card Layer 3: Component Block ─── */}
             <motion.div
-              variants={cardVariants}
+              variants={heroCardVariants}
               className="absolute bottom-16 left-8 z-10 md:bottom-12 md:left-16"
             >
               <motion.div
-                variants={floatVariants}
+                variants={heroFloatVariants}
                 initial="initial"
                 animate="animate"
                 className="glass elevated rounded-xl p-4"
@@ -295,11 +221,11 @@ export default function Hero() {
 
             {/* ─── Card Layer 4: Module Block ─── */}
             <motion.div
-              variants={cardVariants}
+              variants={heroCardVariants}
               className="absolute bottom-8 right-12 z-10 md:bottom-4 md:right-20"
             >
               <motion.div
-                variants={floatDelayedVariants}
+                variants={heroFloatDelayedVariants}
                 initial="initial"
                 animate="animate"
                 className="glass elevated rounded-xl p-4"
