@@ -5,14 +5,13 @@ import { sectionContainer, listStagger, sectionItem } from "@/lib/motion"
 
 /**
  * ═══════════════════════════════════════════════════════════════════════════════
- * PROJECTS SECTION — System Module Cards
+ * PROJECTS SECTION — Content-First Card List
  * ═══════════════════════════════════════════════════════════════════════════════
  *
- * Visual Style: Matches Hero right-side "complex systems" aesthetic
- * - Glassmorphism cards (glass-highlight)
- * - Elevated shadows with hover enhancement
- * - System UI / Dashboard module feel
- * - Dark-first design with proper text hierarchy
+ * Visual Style: Linear / Raycast card list — calm, scannable, premium
+ * - Subtle glass in default state (no strong glow)
+ * - Gentle accent hint on hover only
+ * - Content-first hierarchy, not competing with Hero
  */
 
 const projects: Array<{
@@ -60,11 +59,9 @@ const projects: Array<{
 export default function Projects() {
   return (
     <section id="projects" className="relative py-32">
-      {/* ═══ Background Accent Glow ═══ */}
-      {/* Subtle ambient glow to elevate the section */}
+      {/* ═══ Background Glow (very subtle) ═══ */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/4 top-1/3 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-accent/5 blur-[120px]" />
-        <div className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] translate-x-1/2 rounded-full bg-brand-primary/5 blur-[100px]" />
+        <div className="absolute left-1/4 top-1/3 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-accent/[0.03] blur-[100px]" />
       </div>
 
       <motion.div
@@ -103,11 +100,10 @@ export default function Projects() {
               key={project.title}
               variants={sectionItem}
               /* ─── Card Container ───
-               * glass-highlight: frosted glass effect with top edge highlight
-               * elevated: default shadow for depth
-               * hover: lift up + stronger shadow
+               * Default: subtle bg + border, no strong glow
+               * Hover: gentle lift + accent border hint + slightly stronger shadow
                */
-              className="group glass-highlight elevated rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-elevated-lg)] md:p-8"
+              className="group rounded-2xl border border-border/40 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/20 hover:bg-card/80 hover:shadow-md md:p-8"
             >
               {/* Card Header */}
               <header className="mb-4">
@@ -188,38 +184,29 @@ export default function Projects() {
 
 /**
  * ═══════════════════════════════════════════════════════════════════════════════
- * DESIGN DECISIONS
+ * DESIGN DECISIONS (Refactored for Content-First)
  * ═══════════════════════════════════════════════════════════════════════════════
  *
- * 1. Glass Cards (glass-highlight)
- *    - Frosted glass effect matches Hero's system cards
- *    - Top edge highlight adds depth and premium feel
- *    - backdrop-blur creates layering with background glow
+ * 1. Card Default State (Calm & Readable)
+ *    - bg-card/50 + backdrop-blur-sm: very subtle glass, not attention-grabbing
+ *    - border-border/40: light definition without heaviness
+ *    - No elevated shadow in default — cleaner scanning
  *
- * 2. Elevated Shadows
- *    - Default: elevated class for subtle depth
- *    - Hover: elevated-lg equivalent via CSS variable
- *    - Combined with -translate-y-1 for "lift" effect
+ * 2. Card Hover State (Gentle Accent Hint)
+ *    - hover:-translate-y-0.5: minimal lift (not -1)
+ *    - hover:border-accent/20: subtle accent border fade-in
+ *    - hover:bg-card/80: slightly more opaque
+ *    - hover:shadow-md: gentle shadow increase (not elevated-lg)
  *
- * 3. Text Hierarchy
- *    - Title: text-primary + font-semibold (highest emphasis)
- *    - Subtitle: text-secondary-foreground (clear but secondary)
- *    - Description: text-muted-foreground (readable but recedes)
+ * 3. Background Glow
+ *    - Reduced from two orbs to one
+ *    - Opacity dropped from /5 to /[0.03]
+ *    - Doesn't compete with Hero's dramatic glow
  *
- * 4. Tech Stack Badges
- *    - Semi-transparent (bg-muted/50 + backdrop-blur)
- *    - Subtle border for definition
- *    - Hover state with accent border hint
- *
- * 5. Background Glow
- *    - Ambient accent/brand glow orbs
- *    - Creates depth and visual interest
- *    - Matches Hero's background treatment
- *
- * 6. Spacing
- *    - py-32 for generous vertical breathing room
- *    - gap-8 between cards (not cramped)
- *    - mb-16 for header separation
+ * 4. Visual Hierarchy vs Hero
+ *    - Hero: marketing-level impact with strong glow + glass-highlight
+ *    - Projects: list-level browsing, cards support content not dominate
+ *    - Think "Linear sidebar" not "Stripe hero"
  *
  * ═══════════════════════════════════════════════════════════════════════════════
  */
