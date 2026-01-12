@@ -32,19 +32,21 @@ const skillCards: SkillCard[] = [
       "On-chain Reads & Transaction Flows",
       "DeFi UI (Slippage, Price Impact, Approvals)",
     ],
-    summary: "Building DEX interfaces, crowdfunding dApps, and wallet UX with type-safe contract interactions.",
+    summary:
+      "Building DEX interfaces, crowdfunding dApps, and wallet UX with type-safe contract interactions.",
   },
   {
     title: "Frontend Engineering",
     icon: Server,
     skills: [
-      "SSR / Nuxt.js / Next.js App Router",
+      "SSR / Next.js App Router/ Nuxt.js ",
       "Monorepo (pnpm workspaces)",
       "Performance Optimization",
       "Component Library Architecture",
       "Multi-client (Web / H5 / WebView)",
     ],
-    summary: "Shipping enterprise-scale frontends with SSR, code splitting, and cross-platform consistency.",
+    summary:
+      "Shipping enterprise-scale frontends with SSR, code splitting, and cross-platform consistency.",
   },
   {
     title: "Backend & Infra",

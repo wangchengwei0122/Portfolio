@@ -50,12 +50,14 @@ export default function Hero() {
           viewport={{ amount: 0.4, once: true }}
           className="flex flex-col justify-center space-y-8"
         >
-          {/* Eyebrow - Role identifier */}
+          {/* Eyebrow - Identity + Role */}
           <motion.p
             variants={heroItemVariants}
-            className="text-sm font-medium tracking-widest text-muted-foreground uppercase"
+            className="text-sm font-medium tracking-wide text-muted-foreground"
           >
-            Frontend Engineer · Web3 / DeFi
+            <span className="text-primary">Chengwei Wang</span>
+            <span className="mx-2 text-border">·</span>
+            <span className="uppercase tracking-widest">Frontend Systems Engineer</span>
           </motion.p>
 
           {/* Headline - Core value proposition */}
