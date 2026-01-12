@@ -44,20 +44,17 @@ export default function Contact() {
           className="mb-6 max-w-2xl space-y-4 text-base leading-relaxed text-secondary-foreground"
         >
           <p>
-            I specialize in building Web3 frontends—DEX interfaces, wallet integrations,
-            and dApp UX with clean on-chain transaction flows.
+            I specialize in building Web3 frontends—DEX interfaces, wallet integrations, and dApp UX
+            with clean on-chain transaction flows.
           </p>
           <p>
-            7+ years of production experience spanning enterprise platforms and DeFi applications.
+            8+ years of production experience spanning enterprise platforms and DeFi applications.
             Comfortable with full-stack dApp architecture from indexer to edge cache to frontend.
           </p>
         </motion.div>
 
         {/* What I'm open to */}
-        <motion.ul
-          variants={sectionItem}
-          className="mb-10 space-y-2 text-sm text-muted-foreground"
-        >
+        <motion.ul variants={sectionItem} className="mb-10 space-y-2 text-sm text-muted-foreground">
           <li>• Full-time Web3 / DeFi frontend roles</li>
           <li>• Contract & consulting engagements</li>
           <li>• Remote-first positions</li>

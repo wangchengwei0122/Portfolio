@@ -75,8 +75,8 @@ export default function Hero() {
             className="max-w-md space-y-3 text-base leading-relaxed text-secondary-foreground md:text-lg"
           >
             <p>
-              7+ years shipping production frontends—enterprise platforms, open platforms,
-              and Web3 dApps.
+              8+ years shipping production frontends—enterprise platforms, open platforms, and Web3
+              dApps.
             </p>
             <p className="text-muted-foreground">
               From SSR optimization to on-chain transaction flows, I build interfaces that scale.
