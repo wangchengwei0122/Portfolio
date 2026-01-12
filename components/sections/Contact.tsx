@@ -1,14 +1,15 @@
 "use client"
 import { motion } from "motion/react"
-import { Mail, ArrowUpRight, Github, Linkedin, MapPin } from "lucide-react"
+import { Mail, ArrowUpRight, Github, Linkedin, MapPin, Send } from "lucide-react"
 import { sectionContainer, sectionItem } from "@/lib/motion"
 
 const CONTACT = {
-  email: "hello@example.com",
+  email: "892630kux@gmail.com",
   responseTime: "Typically responds within 24 hours",
-  github: "https://github.com/username",
-  linkedin: "https://linkedin.com/in/username",
-  location: "San Francisco, CA",
+  github: "https://github.com/wangchengwei0122",
+  linkedin: "https://www.linkedin.com/in/chengwei-wang-060852381",
+  telegram: "https://t.me/chengwei0122",
+  location: "China (Open to Remote)",
 }
 
 export default function Contact() {
@@ -34,7 +35,7 @@ export default function Contact() {
           variants={sectionItem}
           className="mb-6 text-3xl font-bold tracking-tight text-primary md:text-4xl"
         >
-          Looking for your next frontend engineer?
+          Looking for a frontend engineer with Web3 experience?
         </motion.h2>
 
         {/* Description */}
@@ -43,12 +44,12 @@ export default function Contact() {
           className="mb-6 max-w-2xl space-y-4 text-base leading-relaxed text-secondary-foreground"
         >
           <p>
-            I specialize in building complex, data-intensive interfaces—trading platforms,
-            real-time dashboards, and enterprise-grade tools that need to perform at scale.
+            I specialize in building Web3 frontends—DEX interfaces, wallet integrations,
+            and dApp UX with clean on-chain transaction flows.
           </p>
           <p>
-            Whether you're scaling a product team, need a technical co-founder,
-            or have a challenging frontend problem—I'd like to hear about it.
+            7+ years of production experience spanning enterprise platforms and DeFi applications.
+            Comfortable with full-stack dApp architecture from indexer to edge cache to frontend.
           </p>
         </motion.div>
 
@@ -57,9 +58,9 @@ export default function Contact() {
           variants={sectionItem}
           className="mb-10 space-y-2 text-sm text-muted-foreground"
         >
-          <li>• Full-time engineering roles</li>
+          <li>• Full-time Web3 / DeFi frontend roles</li>
           <li>• Contract & consulting engagements</li>
-          <li>• Technical advisory for early-stage startups</li>
+          <li>• Remote-first positions</li>
         </motion.ul>
 
         {/* CTA + Contact Info Group */}
@@ -82,7 +83,7 @@ export default function Contact() {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-5 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground">
             <a
               href={CONTACT.github}
               target="_blank"
@@ -100,6 +101,15 @@ export default function Contact() {
             >
               <Linkedin className="size-4" />
               LinkedIn
+            </a>
+            <a
+              href={CONTACT.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-primary"
+            >
+              <Send className="size-4" />
+              Telegram
             </a>
             <span className="inline-flex items-center gap-1.5">
               <MapPin className="size-4" />

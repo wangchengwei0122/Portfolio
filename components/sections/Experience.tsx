@@ -27,46 +27,49 @@ interface Experience {
 const experiences: Experience[] = [
   {
     role: "Senior Frontend Engineer",
-    company: "Web3 Platform",
-    period: "2022 — Present",
-    metrics: ["500K+ Users", "Multi-chain Support", "Core Wallet Team"],
+    company: "Qichacha Technology",
+    period: "2019.04 — Present",
+    metrics: ["Millions of Users", "Open Platform", "AI Integration"],
     summary:
-      "Led frontend architecture for a high-traffic wallet and dApp platform serving users across multiple blockchain networks.",
+      "Leading frontend architecture and core delivery for enterprise open platform, shipping scalable web applications with cross-functional collaboration.",
     contributions: [
-      "Architected core wallet features with focus on security and performance",
-      "Established frontend patterns and component libraries adopted across teams",
-      "Reduced bundle size by 35% through code-splitting and lazy loading",
-      "Collaborated with product and design on complex Web3 interaction flows",
+      "Built SSR optimization with Nuxt.js + Node.js, improving initial load and SEO performance",
+      "Integrated AI capabilities: intelligent Q&A, content summarization, and recommendation features",
+      "Drove department-wide monorepo adoption and established engineering standards for code reuse",
+      "Built modular UI component library and promoted cross-team component standardization",
+      "Refactored multi-client codebases (Web, H5, in-app WebView/JSBridge) for better maintainability",
     ],
-    tags: ["React", "TypeScript", "Web3", "Design Systems"],
+    tags: ["Vue.js", "Nuxt.js", "Node.js", "Monorepo", "AI", "SSR"],
   },
   {
     role: "Frontend Engineer",
-    company: "Product Studio",
-    period: "2019 — 2022",
-    metrics: ["10+ Products", "Design System Lead", "Consumer Scale"],
+    company: "Tongcheng Travel",
+    period: "2018.05 — 2019.04",
+    metrics: ["~30% Bundle Reduction", "Node.js BFF", "Mini Programs"],
     summary:
-      "Built reusable UI systems and shipped client-facing features across multiple product verticals on aggressive timelines.",
+      "Built ticketing, booking, and payment features across Web, Hybrid App, and WeChat Mini Programs.",
     contributions: [
-      "Developed design system components used by 10+ internal applications",
-      "Shipped features for high-traffic consumer products with strict perf budgets",
-      "Reduced feature delivery time by 40% through reusable component patterns",
+      "Added Node.js BFF layer for API aggregation, reducing latency and improving stability",
+      "Modularized core flows with Vuex to improve maintainability and scalability",
+      "Used dynamic import and code splitting to cut bundle size ~30% and speed up first load",
+      "Collaborated closely with UX/design on responsive layout and accessibility details",
     ],
-    tags: ["React", "TypeScript", "Design Systems", "Performance"],
+    tags: ["Vue.js", "Vuex", "Node.js", "Mini Programs", "Performance"],
   },
   {
     role: "Frontend Engineer",
-    company: "SaaS Company",
-    period: "2017 — 2019",
-    metrics: ["40% Faster", "Data Dashboards", "Legacy Migration"],
+    company: "Jiangsu Weisheng Network",
+    period: "2017.04 — 2018.05",
+    metrics: ["jQuery → Vue Migration", "JSBridge", "Component System"],
     summary:
-      "Improved core workflows and performance for internal dashboards and customer-facing analytics tools.",
+      "Responsible for Hybrid App and mini-program frontend development.",
     contributions: [
-      "Optimized rendering for data-heavy dashboards, reducing load times by 40%",
-      "Built accessible forms and data visualization components",
-      "Led migration from legacy stack to modern React-based architecture",
+      "Migrated legacy jQuery projects to Vue, improving modularity and maintainability",
+      "Integrated native capabilities via JSBridge (maps, QR scan, payments, etc.)",
+      "Led company-wide UI refactoring and componentization, establishing unified architecture",
+      "Authored internal coding standards and documentation to improve collaboration quality",
     ],
-    tags: ["React", "D3.js", "Accessibility", "Performance"],
+    tags: ["Vue.js", "jQuery", "Hybrid App", "JSBridge", "Mini Programs"],
   },
 ]
 
@@ -155,7 +158,7 @@ export default function Experience() {
           <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">Experience</h2>
 
           <p className="max-w-2xl text-base leading-relaxed text-secondary-foreground md:text-lg">
-            Building production systems at scale—from consumer products to Web3 infrastructure.
+            7+ years building production systems—from enterprise platforms to Web3 infrastructure.
           </p>
         </motion.header>
 

@@ -23,34 +23,52 @@ interface SkillCard {
 
 const skillCards: SkillCard[] = [
   {
-    title: "Frontend",
+    title: "Web3 Frontend",
     icon: Code2,
     skills: [
-      "React / Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "State Management",
-      "Performance Optimization",
+      "Next.js / TypeScript",
+      "wagmi / viem / RainbowKit",
+      "Wallet Integration & Multi-chain",
+      "On-chain Reads & Transaction Flows",
+      "DeFi UI (Slippage, Price Impact, Approvals)",
     ],
-    summary: "Shipping production UIs for trading platforms and data-intensive dashboards.",
+    summary: "Building DEX interfaces, crowdfunding dApps, and wallet UX with type-safe contract interactions.",
   },
   {
-    title: "Backend",
+    title: "Frontend Engineering",
     icon: Server,
-    skills: ["Node.js / Express", "Python / FastAPI", "REST & GraphQL APIs", "PostgreSQL / Redis"],
-    summary: "Building APIs that handle real-time data streams and high-throughput workloads.",
+    skills: [
+      "SSR / Nuxt.js / Next.js App Router",
+      "Monorepo (pnpm workspaces)",
+      "Performance Optimization",
+      "Component Library Architecture",
+      "Multi-client (Web / H5 / WebView)",
+    ],
+    summary: "Shipping enterprise-scale frontends with SSR, code splitting, and cross-platform consistency.",
   },
   {
-    title: "Tools & Infrastructure",
+    title: "Backend & Infra",
     icon: Wrench,
-    skills: ["Git / GitHub Actions", "Docker / Kubernetes", "CI/CD Pipelines", "Linux / Shell"],
-    summary: "Automating deployments and maintaining reliable infrastructure at scale.",
+    skills: [
+      "Node.js / Fastify",
+      "PostgreSQL / Drizzle ORM",
+      "Cloudflare Workers / KV",
+      "Event Indexer Architecture",
+      "CI/CD & Build Workflows",
+    ],
+    summary: "Building APIs, indexers, and edge caching layers for dApp backends.",
   },
   {
-    title: "Testing & Quality",
+    title: "DX & Quality",
     icon: ShieldCheck,
-    skills: ["Vitest / Jest", "Playwright / Cypress", "Unit & E2E Testing", "Code Review"],
-    summary: "Shipping with confidence through comprehensive testing strategies.",
+    skills: [
+      "Strict TypeScript End-to-End",
+      "Lint / Format Automation",
+      "Reusable Hooks & Adapters",
+      "Domain Model Separation",
+      "Code Review & Standards",
+    ],
+    summary: "Decoupling UI from contract logic with typed adapters and clean state management.",
   },
 ]
 
@@ -98,11 +116,11 @@ export default function Skills() {
         {/* Section Header */}
         <motion.header variants={sectionItem} className="mb-12 space-y-4">
           <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-            Technical Foundation
+            Core Competencies
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">Skills</h2>
           <p className="max-w-2xl text-base leading-relaxed text-secondary-foreground md:text-lg">
-            Built through years of solving complex problems across the full stack.
+            Full-stack capabilities with deep focus on Web3 frontend and DeFi UX.
           </p>
         </motion.header>
 

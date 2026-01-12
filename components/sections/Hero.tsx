@@ -55,7 +55,7 @@ export default function Hero() {
             variants={heroItemVariants}
             className="text-sm font-medium tracking-widest text-muted-foreground uppercase"
           >
-            Frontend Systems Engineer
+            Frontend Engineer · Web3 / DeFi
           </motion.p>
 
           {/* Headline - Core value proposition */}
@@ -64,9 +64,9 @@ export default function Hero() {
             variants={heroItemVariants}
             className="text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl"
           >
-            <span className="text-gradient">Building interfaces</span>
+            <span className="text-gradient">Building frontend systems</span>
             <br />
-            <span className="text-primary">for complex systems.</span>
+            <span className="text-primary">for Web3 applications.</span>
           </motion.h1>
 
           {/* Supporting Copy - Proof points */}
@@ -75,11 +75,11 @@ export default function Hero() {
             className="max-w-md space-y-3 text-base leading-relaxed text-secondary-foreground md:text-lg"
           >
             <p>
-              5 years shipping production frontends—trading platforms, real-time dashboards,
-              data-intensive enterprise tools.
+              7+ years shipping production frontends—enterprise platforms, open platforms,
+              and Web3 dApps.
             </p>
             <p className="text-muted-foreground">
-              I turn ambiguous requirements into systems that scale.
+              From SSR optimization to on-chain transaction flows, I build interfaces that scale.
             </p>
           </motion.div>
 

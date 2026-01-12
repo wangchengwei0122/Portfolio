@@ -23,36 +23,32 @@ const projects: Array<{
   media?: React.ReactNode
 }> = [
   {
-    title: "Fundr",
-    subtitle: "Web3 Crowdfunding Platform",
-    description:
-      "Addressed the trust gap in traditional crowdfunding by implementing milestone-based fund releases via smart contracts. Backers can verify fund usage on-chain, reducing disputes and enabling creators to build credibility. Resulted in 40% higher campaign completion rates during beta testing.",
-    techStack: ["Next.js", "TypeScript", "Solidity", "Ethers.js", "IPFS"],
-    links: {
-      live: "#",
-      github: "#",
-    },
-  },
-  {
     title: "DEX Frontend",
-    subtitle: "Decentralized Exchange UI",
+    subtitle: "Uniswap-style Decentralized Exchange UI",
     description:
-      "Built for active DeFi traders frustrated by slow, gas-inefficient DEX interfaces. Implemented transaction batching and optimistic UI updates to cut perceived latency by 60%. Gas estimation logic reduced failed transactions by 35%, directly saving users on wasted fees.",
-    techStack: ["React", "TypeScript", "Web3.js", "Chart.js", "TailwindCSS"],
+      "Built a production-ready DEX interface supporting token swap flows, multi-wallet connection via RainbowKit, and network switching. Implemented full transaction lifecycle: balance reads, allowance checks, approvals, and swap execution with slippage/price impact calculations. Decoupled on-chain logic into typed adapter hooks for maintainability.",
+    techStack: ["Next.js", "TypeScript", "Tailwind", "RainbowKit", "wagmi", "viem"],
     links: {
-      live: "#",
-      github: "#",
+      live: "https://dex-frontend-bice.vercel.app/",
+      github: "https://github.com/wangchengwei0122/dex-frontend",
     },
   },
   {
-    title: "Enterprise Data Platform",
-    subtitle: "Business Intelligence Dashboard",
+    title: "Fundr",
+    subtitle: "Web3 Crowdfunding dApp",
     description:
-      "Solved data fragmentation for enterprise teams where analysts spent 3+ hours daily gathering metrics from disparate sources. Unified dashboards with sub-second query performance enabled same-day decision making. Adopted by 200+ internal users, reducing weekly reporting prep time from 8 hours to under 1.",
-    techStack: ["Vue.js", "TypeScript", "D3.js", "Node.js", "PostgreSQL"],
+      "Full-stack Web3 crowdfunding platform with campaign creation, on-chain contributions, and role-based withdrawals. Architected indexer-first data flow: contract events → PostgreSQL → Fastify REST API → Cloudflare Edge cache → Next.js frontend. Frontend reads exclusively from API layer; wallet operations handled via wagmi/viem.",
+    techStack: ["Next.js", "TypeScript", "Solidity", "Fastify", "Drizzle ORM", "PostgreSQL", "Cloudflare Workers"],
     links: {
-      live: "#",
+      github: "https://github.com/wangchengwei0122/fundr",
     },
+  },
+  {
+    title: "Enterprise Open Platform",
+    subtitle: "Qichacha — B2B Data Services",
+    description:
+      "Led frontend architecture for an enterprise open platform serving millions of users. Delivered SSR optimization with Nuxt.js for initial load and SEO. Integrated AI-powered features (intelligent Q&A, content summarization). Drove monorepo adoption and built a modular component library for cross-team standardization.",
+    techStack: ["Nuxt.js", "Vue.js", "Node.js", "Monorepo", "AI Integration"],
   },
 ]
 
@@ -79,15 +75,14 @@ export default function Projects() {
               <Layers className="size-4 text-accent" />
             </div>
             <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-              Case Studies
+              Selected Work
             </p>
           </div>
 
           <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">Projects</h2>
 
           <p className="max-w-2xl text-base leading-relaxed text-secondary-foreground md:text-lg">
-            Real-world problems I've solved—from concept to production. Each project reflects my
-            approach to building reliable, user-focused software.
+            Web3 dApps and enterprise platforms—from contract integration to production deployment.
           </p>
         </motion.header>
 
