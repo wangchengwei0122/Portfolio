@@ -76,16 +76,10 @@ function ExperienceCard({ experience }: { experience: Experience }) {
       {/* Header: Role · Company | Period */}
       <header className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
         <div>
-          <h3 className="text-lg font-semibold text-primary">
-            {experience.role}
-          </h3>
-          <p className="text-base font-medium text-secondary-foreground">
-            {experience.company}
-          </p>
+          <h3 className="text-lg font-semibold text-primary">{experience.role}</h3>
+          <p className="text-base font-medium text-secondary-foreground">{experience.company}</p>
         </div>
-        <p className="text-sm text-muted-foreground">
-          {experience.period}
-        </p>
+        <p className="text-sm text-muted-foreground">{experience.period}</p>
       </header>
 
       {/* Impact Metrics (optional) */}
@@ -139,7 +133,7 @@ function ExperienceCard({ experience }: { experience: Experience }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-24">
+    <section id="experience" className="relative py-12">
       <motion.div
         className="mx-auto max-w-5xl px-6 md:px-8 lg:px-12"
         variants={sectionContainer}
@@ -158,9 +152,7 @@ export default function Experience() {
             </p>
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">
-            Experience
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">Experience</h2>
 
           <p className="max-w-2xl text-base leading-relaxed text-secondary-foreground md:text-lg">
             Building production systems at scale—from consumer products to Web3 infrastructure.

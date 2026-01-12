@@ -58,7 +58,7 @@ const projects: Array<{
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-32">
+    <section id="projects" className="relative py-12">
       {/* ═══ Background Glow (very subtle) ═══ */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-1/4 top-1/3 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-accent/[0.03] blur-[100px]" />
@@ -83,9 +83,7 @@ export default function Projects() {
             </p>
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">
-            Projects
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">Projects</h2>
 
           <p className="max-w-2xl text-base leading-relaxed text-secondary-foreground md:text-lg">
             Real-world problems I've solved—from concept to production. Each project reflects my
@@ -108,9 +106,7 @@ export default function Projects() {
               {/* Card Header */}
               <header className="mb-4">
                 {/* Title - primary emphasis */}
-                <h3 className="text-lg font-semibold text-primary md:text-xl">
-                  {project.title}
-                </h3>
+                <h3 className="text-lg font-semibold text-primary md:text-xl">{project.title}</h3>
                 {/* Subtitle - secondary level */}
                 <p className="mt-1 text-sm font-medium text-secondary-foreground">
                   {project.subtitle}

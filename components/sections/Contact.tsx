@@ -117,7 +117,10 @@ function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-secondary-foreground">
+        <label
+          htmlFor="message"
+          className="mb-2 block text-sm font-medium text-secondary-foreground"
+        >
           Message
         </label>
         <textarea
@@ -154,7 +157,7 @@ function ContactForm() {
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24">
+    <section id="contact" className="relative py-12">
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute bottom-0 left-1/2 h-[400px] w-[600px] -translate-x-1/2 translate-y-1/2 rounded-full bg-accent/[0.04] blur-[100px]" />
@@ -178,9 +181,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">
-            Contact
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">Contact</h2>
         </motion.header>
 
         {/* Main Content Card */}
@@ -196,9 +197,7 @@ export default function Contact() {
                 <h3 className="text-2xl font-semibold leading-tight text-primary md:text-3xl">
                   {HEADLINE}
                 </h3>
-                <p className="text-base leading-relaxed text-secondary-foreground">
-                  {SUBTEXT}
-                </p>
+                <p className="text-base leading-relaxed text-secondary-foreground">{SUBTEXT}</p>
               </motion.div>
 
               {/* Primary CTA Buttons */}
@@ -273,9 +272,7 @@ export default function Contact() {
             {/* Right: Message Form */}
             <motion.div variants={sectionItem}>
               <div className="rounded-xl border border-border/30 bg-card/30 p-6 backdrop-blur-sm">
-                <h4 className="mb-5 text-base font-semibold text-primary">
-                  Send a Message
-                </h4>
+                <h4 className="mb-5 text-base font-semibold text-primary">Send a Message</h4>
                 <ContactForm />
               </div>
             </motion.div>

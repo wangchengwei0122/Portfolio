@@ -37,34 +37,19 @@ const skillCards: SkillCard[] = [
   {
     title: "Backend",
     icon: Server,
-    skills: [
-      "Node.js / Express",
-      "Python / FastAPI",
-      "REST & GraphQL APIs",
-      "PostgreSQL / Redis",
-    ],
+    skills: ["Node.js / Express", "Python / FastAPI", "REST & GraphQL APIs", "PostgreSQL / Redis"],
     summary: "Building APIs that handle real-time data streams and high-throughput workloads.",
   },
   {
     title: "Tools & Infrastructure",
     icon: Wrench,
-    skills: [
-      "Git / GitHub Actions",
-      "Docker / Kubernetes",
-      "CI/CD Pipelines",
-      "Linux / Shell",
-    ],
+    skills: ["Git / GitHub Actions", "Docker / Kubernetes", "CI/CD Pipelines", "Linux / Shell"],
     summary: "Automating deployments and maintaining reliable infrastructure at scale.",
   },
   {
     title: "Testing & Quality",
     icon: ShieldCheck,
-    skills: [
-      "Vitest / Jest",
-      "Playwright / Cypress",
-      "Unit & E2E Testing",
-      "Code Review",
-    ],
+    skills: ["Vitest / Jest", "Playwright / Cypress", "Unit & E2E Testing", "Code Review"],
     summary: "Shipping with confidence through comprehensive testing strategies.",
   },
 ]
@@ -73,26 +58,19 @@ function SkillCardComponent({ card }: { card: SkillCard }) {
   const Icon = card.icon
 
   return (
-    <div
-      className="group flex h-full flex-col rounded-2xl border border-border/40 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/20 hover:bg-card/80 hover:shadow-md"
-    >
+    <div className="group flex h-full flex-col rounded-2xl border border-border/40 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/20 hover:bg-card/80 hover:shadow-md">
       {/* Header: Icon + Title */}
       <div className="mb-5 flex items-center gap-3">
         <div className="flex size-10 items-center justify-center rounded-lg bg-accent/10">
           <Icon className="size-5 text-accent" />
         </div>
-        <h3 className="text-base font-semibold text-primary md:text-lg">
-          {card.title}
-        </h3>
+        <h3 className="text-base font-semibold text-primary md:text-lg">{card.title}</h3>
       </div>
 
       {/* Skills List */}
       <ul className="mb-5 flex-1 space-y-2.5">
         {card.skills.map((skill) => (
-          <li
-            key={skill}
-            className="flex items-center gap-2 text-sm text-secondary-foreground"
-          >
+          <li key={skill} className="flex items-center gap-2 text-sm text-secondary-foreground">
             <span className="size-1 rounded-full bg-accent/60" />
             {skill}
           </li>
@@ -109,7 +87,7 @@ function SkillCardComponent({ card }: { card: SkillCard }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-24">
+    <section id="skills" className="relative py-12">
       <motion.div
         className="mx-auto max-w-5xl px-6 md:px-8 lg:px-12"
         variants={sectionContainer}
@@ -122,19 +100,14 @@ export default function Skills() {
           <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
             Technical Foundation
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">
-            Skills
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">Skills</h2>
           <p className="max-w-2xl text-base leading-relaxed text-secondary-foreground md:text-lg">
             Built through years of solving complex problems across the full stack.
           </p>
         </motion.header>
 
         {/* Skills Grid */}
-        <motion.div
-          variants={listStagger}
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2"
-        >
+        <motion.div variants={listStagger} className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {skillCards.map((card) => (
             <motion.div key={card.title} variants={sectionItem}>
               <SkillCardComponent card={card} />
