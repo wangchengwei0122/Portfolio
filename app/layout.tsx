@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Header from "../components/layout/Header"
 import Footer from "../components/layout/Footer"
+import { LanguageProvider } from "@/components/providers/LanguageProvider"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -26,9 +27,11 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="bg-canvas text-primary antialiased">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   )

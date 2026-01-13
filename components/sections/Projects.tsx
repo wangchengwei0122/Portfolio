@@ -2,6 +2,7 @@
 import { motion } from "motion/react"
 import { ExternalLink, Github, Layers } from "lucide-react"
 import { sectionContainer, listStagger, sectionItem } from "@/lib/motion"
+import { useLanguage } from "@/components/providers/LanguageProvider"
 
 /**
  * ═══════════════════════════════════════════════════════════════════════════════
@@ -14,19 +15,14 @@ import { sectionContainer, listStagger, sectionItem } from "@/lib/motion"
  * - Content-first hierarchy, not competing with Hero
  */
 
-const projects: Array<{
-  title: string
-  subtitle: string
-  description: string
+const projectsData: Array<{
+  key: "dex" | "fundr" | "enterprise"
   techStack: string[]
   links?: { live?: string; github?: string }
   media?: React.ReactNode
 }> = [
   {
-    title: "DEX Frontend",
-    subtitle: "Uniswap-style Decentralized Exchange UI",
-    description:
-      "Built a production-ready DEX interface supporting token swap flows, multi-wallet connection via RainbowKit, and network switching. Implemented full transaction lifecycle: balance reads, allowance checks, approvals, and swap execution with slippage/price impact calculations. Decoupled on-chain logic into typed adapter hooks for maintainability.",
+    key: "dex",
     techStack: ["Next.js", "TypeScript", "Tailwind", "RainbowKit", "wagmi", "viem"],
     links: {
       live: "https://dex-frontend-bice.vercel.app/",
@@ -34,25 +30,21 @@ const projects: Array<{
     },
   },
   {
-    title: "Fundr",
-    subtitle: "Web3 Crowdfunding dApp",
-    description:
-      "Full-stack Web3 crowdfunding platform with campaign creation, on-chain contributions, and role-based withdrawals. Architected indexer-first data flow: contract events → PostgreSQL → Fastify REST API → Cloudflare Edge cache → Next.js frontend. Frontend reads exclusively from API layer; wallet operations handled via wagmi/viem.",
+    key: "fundr",
     techStack: ["Next.js", "TypeScript", "Solidity", "Fastify", "Drizzle ORM", "PostgreSQL", "Cloudflare Workers"],
     links: {
       github: "https://github.com/wangchengwei0122/fundr",
     },
   },
   {
-    title: "Enterprise Open Platform",
-    subtitle: "Qichacha — B2B Data Services",
-    description:
-      "Led frontend architecture for an enterprise open platform serving millions of users. Delivered SSR optimization with Nuxt.js for initial load and SEO. Integrated AI-powered features (intelligent Q&A, content summarization). Drove monorepo adoption and built a modular component library for cross-team standardization.",
+    key: "enterprise",
     techStack: ["Nuxt.js", "Vue.js", "Node.js", "Monorepo", "AI Integration"],
   },
 ]
 
 export default function Projects() {
+  const { t } = useLanguage()
+
   return (
     <section id="projects" className="relative py-12">
       {/* ═══ Background Glow (very subtle) ═══ */}
@@ -75,98 +67,101 @@ export default function Projects() {
               <Layers className="size-4 text-accent" />
             </div>
             <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-              Selected Work
+              {t.projects.eyebrow}
             </p>
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">Projects</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-primary md:text-4xl">{t.projects.title}</h2>
 
           <p className="max-w-2xl text-base leading-relaxed text-secondary-foreground md:text-lg">
-            Web3 dApps and enterprise platforms—from contract integration to production deployment.
+            {t.projects.description}
           </p>
         </motion.header>
 
         {/* ═══ Project Cards Grid ═══ */}
         <motion.div variants={listStagger} className="flex flex-col gap-8">
-          {projects.map((project) => (
-            <motion.article
-              key={project.title}
-              variants={sectionItem}
-              /* ─── Card Container ───
-               * Default: subtle bg + border, no strong glow
-               * Hover: gentle lift + accent border hint + slightly stronger shadow
-               */
-              className="group rounded-2xl border border-border/40 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/20 hover:bg-card/80 hover:shadow-md md:p-8"
-            >
-              {/* Card Header */}
-              <header className="mb-4">
-                {/* Title - primary emphasis */}
-                <h3 className="text-lg font-semibold text-primary md:text-xl">{project.title}</h3>
-                {/* Subtitle - secondary level */}
-                <p className="mt-1 text-sm font-medium text-secondary-foreground">
-                  {project.subtitle}
+          {projectsData.map((project) => {
+            const item = t.projects.items[project.key]
+            return (
+              <motion.article
+                key={project.key}
+                variants={sectionItem}
+                /* ─── Card Container ───
+                 * Default: subtle bg + border, no strong glow
+                 * Hover: gentle lift + accent border hint + slightly stronger shadow
+                 */
+                className="group rounded-2xl border border-border/40 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/20 hover:bg-card/80 hover:shadow-md md:p-8"
+              >
+                {/* Card Header */}
+                <header className="mb-4">
+                  {/* Title - primary emphasis */}
+                  <h3 className="text-lg font-semibold text-primary md:text-xl">{item.title}</h3>
+                  {/* Subtitle - secondary level */}
+                  <p className="mt-1 text-sm font-medium text-secondary-foreground">
+                    {item.subtitle}
+                  </p>
+                </header>
+
+                {/* Media slot: renders only when project.media is defined */}
+                {project.media}
+
+                {/* Description - muted for hierarchy */}
+                <p className="mb-6 text-base leading-relaxed text-muted-foreground">
+                  {item.description}
                 </p>
-              </header>
 
-              {/* Media slot: renders only when project.media is defined */}
-              {project.media}
-
-              {/* Description - muted for hierarchy */}
-              <p className="mb-6 text-base leading-relaxed text-muted-foreground">
-                {project.description}
-              </p>
-
-              {/* Footer: Tech Stack + Links */}
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                {/* ─── Tech Stack Badges ───
-                 * Semi-transparent background
-                 * Border for definition
-                 * Small rounded corners
-                 */}
-                <ul className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech) => (
-                    <li
-                      key={tech}
-                      className="rounded-md border border-border/50 bg-muted/50 px-2.5 py-1 text-xs font-medium text-secondary-foreground backdrop-blur-sm transition-colors hover:border-accent/30 hover:text-primary"
-                    >
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* ─── Links ───
-                 * Accent colored with icons
-                 * Hover glow effect
-                 */}
-                {project.links && (
-                  <div className="flex gap-4">
-                    {project.links.live && (
-                      <a
-                        href={project.links.live}
-                        className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-all hover:text-brand-strong"
+                {/* Footer: Tech Stack + Links */}
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                  {/* ─── Tech Stack Badges ───
+                   * Semi-transparent background
+                   * Border for definition
+                   * Small rounded corners
+                   */}
+                  <ul className="flex flex-wrap gap-2">
+                    {project.techStack.map((tech) => (
+                      <li
+                        key={tech}
+                        className="rounded-md border border-border/50 bg-muted/50 px-2.5 py-1 text-xs font-medium text-secondary-foreground backdrop-blur-sm transition-colors hover:border-accent/30 hover:text-primary"
                       >
-                        <ExternalLink className="size-4" />
-                        <span className="underline-offset-4 group-hover/link:underline">
-                          View Live
-                        </span>
-                      </a>
-                    )}
-                    {project.links.github && (
-                      <a
-                        href={project.links.github}
-                        className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-all hover:text-brand-strong"
-                      >
-                        <Github className="size-4" />
-                        <span className="underline-offset-4 group-hover/link:underline">
-                          GitHub
-                        </span>
-                      </a>
-                    )}
-                  </div>
-                )}
-              </div>
-            </motion.article>
-          ))}
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* ─── Links ───
+                   * Accent colored with icons
+                   * Hover glow effect
+                   */}
+                  {project.links && (
+                    <div className="flex gap-4">
+                      {project.links.live && (
+                        <a
+                          href={project.links.live}
+                          className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-all hover:text-brand-strong"
+                        >
+                          <ExternalLink className="size-4" />
+                          <span className="underline-offset-4 group-hover/link:underline">
+                            {t.projects.viewLive}
+                          </span>
+                        </a>
+                      )}
+                      {project.links.github && (
+                        <a
+                          href={project.links.github}
+                          className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-all hover:text-brand-strong"
+                        >
+                          <Github className="size-4" />
+                          <span className="underline-offset-4 group-hover/link:underline">
+                            {t.projects.github}
+                          </span>
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </motion.article>
+            )
+          })}
         </motion.div>
       </motion.div>
     </section>

@@ -11,6 +11,7 @@ import {
   heroFloatDelayedVariants,
   heroPulseVariants,
 } from "@/lib/motion"
+import { useLanguage } from "@/components/providers/LanguageProvider"
 
 /**
  * ═══════════════════════════════════════════════════════════════════════════════
@@ -31,6 +32,8 @@ import {
 // ─── Component ─────────────────────────────────────────────────────────────────
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section id="hero" className="relative flex min-h-screen items-center overflow-hidden">
       {/* ═══ Background Glow Effect ═══ */}
@@ -55,9 +58,9 @@ export default function Hero() {
             variants={heroItemVariants}
             className="text-sm font-medium tracking-wide text-muted-foreground"
           >
-            <span className="text-primary">Chengwei Wang</span>
+            <span className="text-primary">{t.hero.eyebrow.name}</span>
             <span className="mx-2 text-border">·</span>
-            <span className="uppercase tracking-widest">Frontend Systems Engineer</span>
+            <span className="uppercase tracking-widest">{t.hero.eyebrow.role}</span>
           </motion.p>
 
           {/* Headline - Core value proposition */}
@@ -66,9 +69,9 @@ export default function Hero() {
             variants={heroItemVariants}
             className="text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl"
           >
-            <span className="text-gradient">Building frontend systems</span>
+            <span className="text-gradient">{t.hero.headline.gradient}</span>
             <br />
-            <span className="text-primary">for Web3 applications.</span>
+            <span className="text-primary">{t.hero.headline.normal}</span>
           </motion.h1>
 
           {/* Supporting Copy - Proof points */}
@@ -76,13 +79,8 @@ export default function Hero() {
             variants={heroItemVariants}
             className="max-w-md space-y-3 text-base leading-relaxed text-secondary-foreground md:text-lg"
           >
-            <p>
-              8+ years shipping production frontends—enterprise platforms, open platforms, and Web3
-              dApps.
-            </p>
-            <p className="text-muted-foreground">
-              From SSR optimization to on-chain transaction flows, I build interfaces that scale.
-            </p>
+            <p>{t.hero.description.main}</p>
+            <p className="text-muted-foreground">{t.hero.description.sub}</p>
           </motion.div>
 
           {/* CTA Group */}
@@ -92,7 +90,7 @@ export default function Hero() {
               href="#projects"
               className="group inline-flex items-center gap-2 rounded-lg bg-brand-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 glow hover:bg-brand-strong hover:glow-strong"
             >
-              View Projects
+              {t.hero.cta.primary}
               <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
 
@@ -101,7 +99,7 @@ export default function Hero() {
               href="#about"
               className="text-sm font-medium text-secondary-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
             >
-              About Me
+              {t.hero.cta.secondary}
             </a>
           </motion.div>
         </motion.div>
@@ -142,15 +140,15 @@ export default function Hero() {
                     <Layers className="size-5 text-accent" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-primary">System Overview</p>
-                    <p className="text-xs text-muted-foreground">Real-time metrics</p>
+                    <p className="text-sm font-semibold text-primary">{t.hero.cards.systemOverview}</p>
+                    <p className="text-xs text-muted-foreground">{t.hero.cards.realTimeMetrics}</p>
                   </div>
                 </div>
                 {/* Fake metrics bars */}
                 <div className="space-y-3">
                   <div className="space-y-1.5">
                     <div className="flex justify-between text-xs">
-                      <span className="text-muted-foreground">Performance</span>
+                      <span className="text-muted-foreground">{t.hero.cards.performance}</span>
                       <span className="text-accent">98.2%</span>
                     </div>
                     <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
@@ -159,7 +157,7 @@ export default function Hero() {
                   </div>
                   <div className="space-y-1.5">
                     <div className="flex justify-between text-xs">
-                      <span className="text-muted-foreground">Uptime</span>
+                      <span className="text-muted-foreground">{t.hero.cards.uptime}</span>
                       <span className="text-accent">99.9%</span>
                     </div>
                     <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
@@ -183,7 +181,7 @@ export default function Hero() {
               >
                 <div className="mb-3 flex items-center gap-2">
                   <Activity className="size-4 text-accent" />
-                  <span className="text-xs font-medium text-primary">Live Activity</span>
+                  <span className="text-xs font-medium text-primary">{t.hero.cards.liveActivity}</span>
                 </div>
                 {/* Fake activity graph */}
                 <div className="flex h-12 items-end gap-1">
@@ -214,8 +212,8 @@ export default function Hero() {
                     <Cpu className="size-4 text-muted-foreground" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-primary">Process Node</p>
-                    <p className="text-[10px] text-muted-foreground">Active · 24ms</p>
+                    <p className="text-xs font-medium text-primary">{t.hero.cards.processNode}</p>
+                    <p className="text-[10px] text-muted-foreground">{t.hero.cards.active} · 24ms</p>
                   </div>
                 </div>
               </motion.div>
@@ -237,8 +235,8 @@ export default function Hero() {
                     <Blocks className="size-4 text-muted-foreground" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-primary">UI Module</p>
-                    <p className="text-[10px] text-muted-foreground">Rendered · 12ms</p>
+                    <p className="text-xs font-medium text-primary">{t.hero.cards.uiModule}</p>
+                    <p className="text-[10px] text-muted-foreground">{t.hero.cards.rendered} · 12ms</p>
                   </div>
                 </div>
               </motion.div>
@@ -293,7 +291,7 @@ export default function Hero() {
           className="flex flex-col items-center gap-2"
         >
           <span className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
-            Scroll
+            {t.hero.scroll}
           </span>
           <div className="h-8 w-px bg-gradient-to-b from-border to-transparent" />
         </motion.div>
