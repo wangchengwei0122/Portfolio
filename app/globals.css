@@ -102,30 +102,30 @@
 
   /* ─── Surface Hierarchy ─── */
   /* Gray canvas → White cards → Brighter popovers */
-  --background: oklch(0.955 0.008 255);        /* Cool gray canvas */
-  --foreground: oklch(0.145 0.025 255);        /* Near-black text */
-  --card: oklch(0.995 0.003 255);              /* Pure white cards */
+  --background: oklch(0.955 0.008 255); /* Cool gray canvas */
+  --foreground: oklch(0.145 0.025 255); /* Near-black text */
+  --card: oklch(0.995 0.003 255); /* Pure white cards */
   --card-foreground: oklch(0.145 0.025 255);
-  --popover: oklch(1 0 0);                     /* Pure white */
+  --popover: oklch(1 0 0); /* Pure white */
   --popover-foreground: oklch(0.145 0.025 255);
 
   /* ─── Text Hierarchy ─── */
-  --primary: oklch(0.08 0.03 255);             /* Deep black — headlines */
+  --primary: oklch(0.08 0.03 255); /* Deep black — headlines */
   --primary-foreground: oklch(0.98 0.005 255);
-  --secondary: oklch(0.935 0.008 255);         /* Light surface */
+  --secondary: oklch(0.935 0.008 255); /* Light surface */
   --secondary-foreground: oklch(0.28 0.02 255); /* Clear dark gray — readable */
   --muted: oklch(0.935 0.008 255);
-  --muted-foreground: oklch(0.45 0.015 255);   /* Softer but legible */
+  --muted-foreground: oklch(0.45 0.015 255); /* Softer but legible */
 
   /* ─── Accent: Electric Cyan-Blue ─── */
   /* Vibrant, techy, Vercel-inspired */
-  --accent: oklch(0.55 0.195 230);             /* Electric blue */
+  --accent: oklch(0.55 0.195 230); /* Electric blue */
   --accent-foreground: oklch(0.98 0.01 230);
 
   /* ─── Brand: CTA / Hero Buttons ─── */
-  --brand-primary: oklch(0.52 0.20 230);       /* Solid CTA */
-  --brand-muted: oklch(0.94 0.045 230);        /* Subtle wash */
-  --brand-strong: oklch(0.45 0.22 235);        /* Hover state */
+  --brand-primary: oklch(0.52 0.2 230); /* Solid CTA */
+  --brand-muted: oklch(0.94 0.045 230); /* Subtle wash */
+  --brand-strong: oklch(0.45 0.22 235); /* Hover state */
   --brand-ring: oklch(0.55 0.195 230 / 0.4);
 
   /* ─── Semantic ─── */
@@ -135,11 +135,11 @@
   --ring: oklch(0.55 0.195 230 / 0.45);
 
   /* ─── Chart Palette ─── */
-  --chart-1: oklch(0.60 0.20 220);             /* Cyan */
-  --chart-2: oklch(0.58 0.18 280);             /* Violet */
-  --chart-3: oklch(0.62 0.16 160);             /* Teal */
-  --chart-4: oklch(0.70 0.16 75);              /* Amber */
-  --chart-5: oklch(0.60 0.20 340);             /* Rose */
+  --chart-1: oklch(0.6 0.2 220); /* Cyan */
+  --chart-2: oklch(0.58 0.18 280); /* Violet */
+  --chart-3: oklch(0.62 0.16 160); /* Teal */
+  --chart-4: oklch(0.7 0.16 75); /* Amber */
+  --chart-5: oklch(0.6 0.2 340); /* Rose */
 
   /* ─── Sidebar ─── */
   --sidebar: oklch(0.97 0.006 255);
@@ -156,11 +156,10 @@
      ═══════════════════════════════════════════════════════════════════════════ */
 
   /* Glow effects for accent elements */
-  --glow-accent: 0 0 20px oklch(0.55 0.195 230 / 0.35),
-                 0 0 40px oklch(0.55 0.195 230 / 0.2);
-  --glow-accent-strong: 0 0 30px oklch(0.55 0.195 230 / 0.5),
-                        0 0 60px oklch(0.55 0.195 230 / 0.3),
-                        0 0 100px oklch(0.55 0.195 230 / 0.15);
+  --glow-accent: 0 0 20px oklch(0.55 0.195 230 / 0.35), 0 0 40px oklch(0.55 0.195 230 / 0.2);
+  --glow-accent-strong:
+    0 0 30px oklch(0.55 0.195 230 / 0.5), 0 0 60px oklch(0.55 0.195 230 / 0.3),
+    0 0 100px oklch(0.55 0.195 230 / 0.15);
 
   /* Glass surface for cards/modals with backdrop-blur */
   --surface-glass: oklch(1 0 0 / 0.75);
@@ -176,23 +175,23 @@
     135deg,
     oklch(0.55 0.195 220) 0%,
     oklch(0.48 0.21 260) 50%,
-    oklch(0.52 0.20 280) 100%
+    oklch(0.52 0.2 280) 100%
   );
 
   /* Text gradient for headlines */
   --text-gradient-primary: linear-gradient(
     135deg,
-    oklch(0.50 0.20 220) 0%,
+    oklch(0.5 0.2 220) 0%,
     oklch(0.45 0.22 270) 100%
   );
 
   /* Elevated shadow for cards/buttons */
-  --shadow-elevated: 0 4px 6px oklch(0.2 0.02 255 / 0.05),
-                     0 10px 20px oklch(0.2 0.02 255 / 0.08),
-                     0 20px 40px oklch(0.2 0.02 255 / 0.06);
-  --shadow-elevated-lg: 0 8px 16px oklch(0.2 0.02 255 / 0.08),
-                        0 20px 40px oklch(0.2 0.02 255 / 0.1),
-                        0 40px 80px oklch(0.2 0.02 255 / 0.08);
+  --shadow-elevated:
+    0 4px 6px oklch(0.2 0.02 255 / 0.05), 0 10px 20px oklch(0.2 0.02 255 / 0.08),
+    0 20px 40px oklch(0.2 0.02 255 / 0.06);
+  --shadow-elevated-lg:
+    0 8px 16px oklch(0.2 0.02 255 / 0.08), 0 20px 40px oklch(0.2 0.02 255 / 0.1),
+    0 40px 80px oklch(0.2 0.02 255 / 0.08);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -205,25 +204,25 @@
 .dark {
   /* ─── Surface Hierarchy ─── */
   /* Deep space → Elevated cards → Floating popovers */
-  --background: oklch(0.095 0.02 260);         /* Deep blue-black */
-  --foreground: oklch(0.93 0.01 255);          /* Clean white */
-  --card: oklch(0.14 0.02 260);                /* Elevated surface */
+  --background: oklch(0.095 0.02 260); /* Deep blue-black */
+  --foreground: oklch(0.93 0.01 255); /* Clean white */
+  --card: oklch(0.14 0.02 260); /* Elevated surface */
   --card-foreground: oklch(0.93 0.01 255);
-  --popover: oklch(0.17 0.02 260);             /* Floating layer */
+  --popover: oklch(0.17 0.02 260); /* Floating layer */
   --popover-foreground: oklch(0.93 0.01 255);
 
   /* ─── Text Hierarchy ─── */
-  --primary: oklch(0.97 0.005 255);            /* Bright white — headlines */
+  --primary: oklch(0.97 0.005 255); /* Bright white — headlines */
   --primary-foreground: oklch(0.095 0.02 260);
-  --secondary: oklch(0.18 0.018 260);          /* Raised surface */
+  --secondary: oklch(0.18 0.018 260); /* Raised surface */
   --secondary-foreground: oklch(0.78 0.01 255); /* Clear off-white */
   --muted: oklch(0.18 0.018 260);
-  --muted-foreground: oklch(0.58 0.01 255);    /* Dim but readable */
+  --muted-foreground: oklch(0.58 0.01 255); /* Dim but readable */
 
   /* ─── Accent: Luminous Cyan-Blue ─── */
   /* Bright, glowing, futuristic */
-  --accent: oklch(0.72 0.18 220);              /* Glowing cyan */
-  --accent-foreground: oklch(0.10 0.02 220);
+  --accent: oklch(0.72 0.18 220); /* Glowing cyan */
+  --accent-foreground: oklch(0.1 0.02 220);
 
   /* ─── Brand: CTA / Hero ─── */
   --brand-primary: oklch(0.68 0.19 220);
@@ -232,7 +231,7 @@
   --brand-ring: oklch(0.72 0.18 220 / 0.5);
 
   /* ─── Semantic ─── */
-  --destructive: oklch(0.62 0.20 25);
+  --destructive: oklch(0.62 0.2 25);
   --border: oklch(0.24 0.02 260);
   --input: oklch(0.24 0.02 260);
   --ring: oklch(0.72 0.18 220 / 0.55);
@@ -240,7 +239,7 @@
   /* ─── Chart ─── */
   --chart-1: oklch(0.75 0.18 220);
   --chart-2: oklch(0.72 0.16 280);
-  --chart-3: oklch(0.70 0.14 160);
+  --chart-3: oklch(0.7 0.14 160);
   --chart-4: oklch(0.78 0.14 75);
   --chart-5: oklch(0.72 0.18 340);
 
@@ -259,11 +258,10 @@
      ═══════════════════════════════════════════════════════════════════════════ */
 
   /* Glow effects — the signature look */
-  --glow-accent: 0 0 25px oklch(0.72 0.18 220 / 0.4),
-                 0 0 50px oklch(0.68 0.20 230 / 0.25);
-  --glow-accent-strong: 0 0 30px oklch(0.72 0.18 220 / 0.6),
-                        0 0 60px oklch(0.68 0.20 230 / 0.4),
-                        0 0 120px oklch(0.60 0.22 240 / 0.2);
+  --glow-accent: 0 0 25px oklch(0.72 0.18 220 / 0.4), 0 0 50px oklch(0.68 0.2 230 / 0.25);
+  --glow-accent-strong:
+    0 0 30px oklch(0.72 0.18 220 / 0.6), 0 0 60px oklch(0.68 0.2 230 / 0.4),
+    0 0 120px oklch(0.6 0.22 240 / 0.2);
 
   /* Glass surface — frosted, premium feel */
   --surface-glass: oklch(0.14 0.02 260 / 0.7);
@@ -287,16 +285,16 @@
     135deg,
     oklch(0.85 0.15 210) 0%,
     oklch(0.78 0.18 250) 50%,
-    oklch(0.72 0.20 280) 100%
+    oklch(0.72 0.2 280) 100%
   );
 
   /* Elevated shadows with glow */
-  --shadow-elevated: 0 4px 6px oklch(0 0 0 / 0.3),
-                     0 10px 20px oklch(0 0 0 / 0.25),
-                     0 0 40px oklch(0.72 0.18 220 / 0.08);
-  --shadow-elevated-lg: 0 8px 16px oklch(0 0 0 / 0.35),
-                        0 20px 40px oklch(0 0 0 / 0.3),
-                        0 0 60px oklch(0.72 0.18 220 / 0.12);
+  --shadow-elevated:
+    0 4px 6px oklch(0 0 0 / 0.3), 0 10px 20px oklch(0 0 0 / 0.25),
+    0 0 40px oklch(0.72 0.18 220 / 0.08);
+  --shadow-elevated-lg:
+    0 8px 16px oklch(0 0 0 / 0.35), 0 20px 40px oklch(0 0 0 / 0.3),
+    0 0 60px oklch(0.72 0.18 220 / 0.12);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════════
@@ -323,7 +321,7 @@
   html *::before,
   html *::after {
     transition-property: background-color, border-color, color, fill, stroke, box-shadow;
-    transition-duration: 200ms;
+    transition-duration: 500ms;
     transition-timing-function: ease-out;
   }
 
@@ -418,10 +416,12 @@
     border-radius: inherit;
     padding: 1px;
     background: var(--hero-gradient);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-                  linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box,
-          linear-gradient(#fff 0 0);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
