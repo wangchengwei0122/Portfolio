@@ -429,6 +429,21 @@
 }
 
 /* ══════════════════════════════════════════════════════════════════════════════
+   LANGUAGE SWITCH TRANSITION
+   ══════════════════════════════════════════════════════════════════════════════
+   Smooth fade out/in when switching languages to hide layout shifts.
+   Only affects <main>, keeps header/footer visible and interactive.
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+main {
+  transition: opacity 150ms ease-out;
+}
+
+body.is-lang-switching main {
+  opacity: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
    COMPONENT DESIGN NOTES
    ══════════════════════════════════════════════════════════════════════════════
 

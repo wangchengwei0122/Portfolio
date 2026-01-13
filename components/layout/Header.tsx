@@ -75,16 +75,14 @@ export default function Header() {
           <button
             onClick={toggleLang}
             aria-label={lang === "en" ? "Switch to Chinese" : "Switch to English"}
-            className="flex h-9 items-center justify-center rounded-md border border-border/60 bg-muted/50 px-2.5 text-xs font-medium text-secondary-foreground transition-colors hover:border-accent/40 hover:bg-muted hover:text-primary"
+            className="flex size-9 items-center justify-center rounded-md border border-border/60 bg-muted/50 text-xs font-medium text-secondary-foreground transition-colors hover:border-accent/40 hover:bg-muted hover:text-primary"
           >
             {mounted ? (
-              <span>
-                <span className={lang === "en" ? "text-primary" : "text-muted-foreground"}>EN</span>
-                <span className="mx-1 text-border">/</span>
-                <span className={lang === "zh" ? "text-primary" : "text-muted-foreground"}>中</span>
+              <span className="text-[11px] font-semibold tracking-tight">
+                {lang === "en" ? "EN" : "中"}
               </span>
             ) : (
-              <span>EN / 中</span>
+              <span className="size-4" />
             )}
           </button>
 

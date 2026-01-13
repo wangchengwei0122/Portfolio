@@ -14,8 +14,8 @@ export const zh: Locale = {
   },
   hero: {
     eyebrow: {
-      name: "王成威",
-      role: "前端系统工程师",
+      name: "王成伟",
+      role: "前端开发工程师",
     },
     headline: {
       gradient: "构建前端系统",
@@ -62,10 +62,10 @@ export const zh: Locale = {
           "全栈 Web3 众筹平台，支持活动创建、链上捐款及基于角色的提款。架构采用索引器优先的数据流：合约事件 → PostgreSQL → Fastify REST API → Cloudflare Edge 缓存 → Next.js 前端。前端专门从 API 层读取数据；钱包操作通过 wagmi/viem 处理。",
       },
       enterprise: {
-        title: "企业开放平台",
-        subtitle: "企查查 — B2B 数据服务",
+        title: "企查查开放平台",
+        subtitle: "企查查 — 开放平台",
         description:
-          "主导服务数百万用户的企业开放平台前端架构。使用 Nuxt.js 实现 SSR 优化以改善首屏加载和 SEO。集成 AI 驱动功能（智能问答、内容摘要）。推动 monorepo 采用并构建模块化组件库以实现跨团队标准化。",
+          "主导服务数百万用户的企查查开放平台前端架构。使用 Nuxt.js 实现 SSR 优化以改善首屏加载和 SEO。集成 AI 驱动功能（智能问答、内容摘要）。推动 monorepo 采用并构建模块化组件库以实现跨团队标准化。",
       },
     },
   },

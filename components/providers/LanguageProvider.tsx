@@ -33,7 +33,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const toggleLang = () => {
     const newLang = lang === "en" ? "zh" : "en"
-    setLang(newLang)
+    // Fade out
+    document.body.classList.add("is-lang-switching")
+    // Wait for fade out, then switch
+    setTimeout(() => {
+      setLang(newLang)
+      // Wait for React render, then fade in
+      requestAnimationFrame(() => {
+        document.body.classList.remove("is-lang-switching")
+      })
+    }, 150)
   }
 
   const t = lang === "zh" ? zh : en
